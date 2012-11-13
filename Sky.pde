@@ -12,7 +12,7 @@ public class Sky {
     xDistance = backgroundWidth - globals.viewportWidth;
   }
   
-  public void redraw () {
+  public void iterate () {
     xMultiplier = abs(world.posX) / (world.mapWidth - globals.viewportWidth);
     bgX = (xDistance * xMultiplier) * -1;      
     image(backgroundGraphic, bgX, 0, backgroundWidth, backgroundHeight);

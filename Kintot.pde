@@ -60,7 +60,7 @@ public class Kintot extends Enemy {
   }
   */
 
-  public void redraw () {
+  public void iterate () {
 
     // 0 = top
     // 1 = right

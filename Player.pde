@@ -203,7 +203,7 @@ public class Player extends Hitbox {
     sounds.playAudio(sounds.die);
   }
 
-  public void redraw () {
+  public void iterate () {
       
     //System.out.println("---PLAYER-------------------------------------------");
     

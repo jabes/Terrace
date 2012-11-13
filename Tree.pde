@@ -32,7 +32,7 @@ private class Tree extends InteractiveObject {
     reset();
   }
 
-  void redraw () {
+  void iterate () {
     animateTree.run();
     super.spriteBlock = animateTree.spriteBlock;
   }

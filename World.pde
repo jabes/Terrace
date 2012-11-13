@@ -58,7 +58,7 @@ public class World {
     init();
   }
   
-  void redraw () {
+  void iterate () {
     
     float playerCenter = player.posX + (player.sizeWidth / 2);
     int mapThresholdRight = mapWidth - globals.viewportHalfWidth;

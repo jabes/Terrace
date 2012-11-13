@@ -46,7 +46,7 @@ public class Button {
     iconH = h;    
   }
   
-  public void redraw () {
+  public void iterate () {
     
     isMouseOver = mouse.overRect(buttonX, buttonY, buttonWidth, buttonHeight);
     isActive = isMouseOver && mouse.wasClicked;

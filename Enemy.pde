@@ -35,7 +35,7 @@ public abstract class Enemy {
   
   abstract void reset();
   abstract void destroy();
-  abstract void redraw();
+  abstract void iterate();
   abstract void moveEnemy(float x, float y);
   //abstract PImage animateEnemy(int dir);
   

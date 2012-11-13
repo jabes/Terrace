@@ -22,7 +22,7 @@ private class Spring extends InteractiveObject {
     reset();
   }
 
-  void redraw () {
+  void iterate () {
     
     if (player.isTouching(super.posX, super.posY, super.sizeWidth, super.sizeHeight) && player.speedY > 0 && cooldown == 0) {
       player.bounce(strength);

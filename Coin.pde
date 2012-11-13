@@ -41,13 +41,13 @@ private class Coin extends InteractiveObject {
 
   void destroy () {
     sounds.playAudio(sounds.coin);
-    score.add(1);
+    score.increase(1);
     animateCoin.reset();
     super.isAvailable = false;
     init();
   }
 
-  void redraw () {
+  void iterate () {
                
     if (coinDirection == 0) { // EASE UP
       coinOffsetY = easingPosY.value * coinDestinationY;

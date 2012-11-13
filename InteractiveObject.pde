@@ -30,7 +30,7 @@ public abstract class InteractiveObject extends Hitbox {
   abstract void init();
   abstract void reset();
   abstract void destroy();
-  abstract void redraw();
+  abstract void iterate();
 
   void calcPosition () {
     

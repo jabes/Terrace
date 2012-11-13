@@ -209,27 +209,27 @@ void draw () {
     
     applet.background(120);
     
-    sky.redraw();
-    world.redraw();    
-    player.redraw();
+    sky.iterate();
+    world.iterate();    
+    player.iterate();
 
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
-      if (enemy.isAlive || enemy.isExploding) enemy.redraw();
+      if (enemy.isAlive || enemy.isExploding) enemy.iterate();
       if (enemy.isAlive && player.isTouching(enemy.posX, enemy.posY, enemy.sizeWidth, enemy.sizeHeight)) player.destroy();
     }
         
     for (int i = 0, ii = objects.size(); i < ii; i++) {
       InteractiveObject intObj = (InteractiveObject) objects.get(i);
       if (intObj.isAvailable && world.isDrawable(intObj.tileX, 2)) {
-        intObj.redraw();
+        intObj.iterate();
         image(intObj.spriteBlock, intObj.posX, intObj.posY, intObj.sizeWidth, intObj.sizeHeight);
       }
     }
     
     for (int i = 0, ii = globals.maxBullets; i < ii; i++) if (bullets[i].isActive) {
       Bullet bullet = bullets[i];
-      bullet.redraw();
+      bullet.iterate();
       for (int n = 0, nn = enemies.size(); n < nn; n++) {
         Enemy enemy = (Enemy) enemies.get(n);
         if (enemy.isAlive && bullet.isTouching(enemy.posX, enemy.posY, enemy.sizeWidth, enemy.sizeHeight)) {
@@ -241,8 +241,8 @@ void draw () {
     
     applet.translate(abs(world.posX), abs(world.posY));
 
-    score.redraw();
-    volumeButton.redraw();
+    score.iterate();
+    volumeButton.iterate();
         
     if (volumeButton.isActive) {
       if (sounds.isMuted) {
@@ -292,7 +292,7 @@ void draw () {
       
       sounds.loopAudio(sounds.music);
       
-    } else playAgainButton.redraw();
+    } else playAgainButton.iterate();
     
   }
   

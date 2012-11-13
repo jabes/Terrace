@@ -8,7 +8,7 @@ private class CommonObject extends InteractiveObject {
   void init () {}
   void reset () {}
   void destroy () {}
-  void redraw () {}
+  void iterate () {}
   
 }
 

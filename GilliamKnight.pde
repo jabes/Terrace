@@ -66,10 +66,10 @@ public class GilliamKnight extends Enemy {
     super.isAlive = false;
     super.isExploding = true;
     sounds.playAudio(sounds.kill);
-    score.add(5);
+    score.increase(5);
   }
 
-  public void redraw () {
+  public void iterate () {
 
     // 0 = top
     // 1 = right

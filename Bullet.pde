@@ -103,7 +103,7 @@ public class Bullet extends Hitbox {
     isExploding = true;
   }
   
-  public void redraw () {
+  public void iterate () {
     
     // 0 = top
     // 1 = right

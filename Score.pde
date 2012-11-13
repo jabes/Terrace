@@ -10,11 +10,11 @@ public class Score {
     p = 0;
   }
   
-  public void add (int i) {
+  public void increase (int i) {
     p += i;
   }
   
-  public void redraw () {
+  public void iterate () {
     fill(255);
     textFont(fonts.Pro);
     textAlign(LEFT, TOP);
