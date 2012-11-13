@@ -35,6 +35,8 @@ public class GilliamKnight extends Enemy {
   };
 
   public GilliamKnight (int tileX, int tileY) {
+
+    
     super(tileX, tileY);
     super.sizeWidth = this.sizeDetectionWidth;
     super.sizeHeight = this.sizeDetectionHeight;

@@ -23,7 +23,7 @@ public abstract class InteractiveObject extends Hitbox {
     super.sizeWidth = e;
     super.sizeHeight = f;
     alignment = g;
-    spriteSheet = tileSheetInterativeObjects;
+    spriteSheet = game.tileSheetInterativeObjects;
     spriteBlock = spriteSheet.get(spriteX, spriteY, sizeWidth, sizeHeight);
   }
 

@@ -1,10 +1,21 @@
 public class Mouse {
   
+  int cursor;
   boolean isActive;
   boolean wasClicked;
-
+  
   Mouse () {
+    init();
+  }
+  
+  void init () {
     isActive = false;
+    wasClicked = false;
+    cursor = ARROW;  
+  }
+  
+  void reset () {
+    init();
   }
 
   void pressed () {
@@ -14,10 +25,6 @@ public class Mouse {
   void released () {
     wasClicked = true;
     isActive = false;
-  }
-  
-  void reset () {
-    wasClicked = false;
   }
   
   boolean overRect (int x, int y, int w, int h) {

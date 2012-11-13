@@ -545,9 +545,9 @@ public class Player extends Hitbox {
     if (gunInterval == 0) {
       for (int i = 0, ii = globals.maxBullets; i < ii; i++) {
         // override an inactive bullet
-        if (!bullets[i].isActive) {
-          if (dir == 1) bullets[i].init(super.posX + super.sizeWidth, super.posY + halfHeight, dir); // RIGHT
-          else if (dir == 3) bullets[i].init(super.posX, super.posY + halfHeight, dir); // LEFT
+        if (!game.bullets[i].isActive) {
+          if (dir == 1) game.bullets[i].init(super.posX + super.sizeWidth, super.posY + halfHeight, dir); // RIGHT
+          else if (dir == 3) game.bullets[i].init(super.posX, super.posY + halfHeight, dir); // LEFT
           sounds.playAudio(sounds.lazer);
           break; // stop looking for inactive bullets
         }

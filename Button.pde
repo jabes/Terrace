@@ -27,7 +27,6 @@ public class Button {
   }
   
   public void reset () {
-    cursor(ARROW); 
     isMouseOver = false;
     isActive = false;
   }
@@ -53,11 +52,8 @@ public class Button {
     
     if (isMouseOver) { 
       fill(colors[1][0], colors[1][1], colors[1][2]); 
-      cursor(HAND); 
-    } else {
-      fill(colors[0][0], colors[0][1], colors[0][2]); 
-      cursor(ARROW); 
-    }
+      mouse.cursor = HAND;
+    } else fill(colors[0][0], colors[0][1], colors[0][2]);
     
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
     
