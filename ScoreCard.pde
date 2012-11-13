@@ -36,12 +36,14 @@ public class ScoreCard {
     applet.background(216, 40, 0);
     image(menu.backdropGraphic, 0, globals.viewportHeight - 122, 600, 122);
     
-    applet.fill(255);
-    applet.textFont(fonts.AndaleMono);
-    applet.textAlign(CENTER);
-    applet.text("YOU HAVE PERISHED", globals.viewportHalfWidth, 120);
-    applet.textFont(fonts.TheSans);
-    applet.text("You have " + score.p + " points", globals.viewportHalfWidth, 150);
+    pushStyle();
+    fill(255);
+    textFont(fonts.AndaleMono);
+    textAlign(CENTER);
+    text("YOU HAVE PERISHED", globals.viewportHalfWidth, 120);
+    textFont(fonts.TheSans);
+    text("You have " + score.p + " points", globals.viewportHalfWidth, 150);
+    popStyle();
     
     if (playAgainButton.isActive) {
       hide();

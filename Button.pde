@@ -50,19 +50,22 @@ public class Button {
     isMouseOver = mouse.overRect(buttonX, buttonY, buttonWidth, buttonHeight);
     isActive = isMouseOver && mouse.wasClicked;
     
-    if (isMouseOver) { 
+    pushStyle();
+    if (isMouseOver) {
       fill(colors[1][0], colors[1][1], colors[1][2]); 
       mouse.cursor = HAND;
     } else fill(colors[0][0], colors[0][1], colors[0][2]);
-    
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
+    popStyle();
     
     if (buttonLabel != null) {
-        
+      
+      pushStyle();
       fill(0);
       textFont(fonts.Pro);
       textAlign(CENTER, CENTER);
       text(buttonLabel, buttonX + (buttonWidth / 2), buttonY + (buttonHeight / 2));
+      popStyle();
     
     } else if (buttonIcon != null) {
       

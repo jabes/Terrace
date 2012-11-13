@@ -83,9 +83,6 @@ public class World {
           tileBlock = tileSheet.get(mapLegend[tileType][0], mapLegend[tileType][1], tileWidth, tileHeight);
           image(tileBlock, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
         }
-        //noFill();
-        //stroke(0);
-        //rect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
       }
     }
     
