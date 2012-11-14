@@ -34,7 +34,7 @@ private class Spring extends InteractiveObject {
       super.spriteY = 0;
     }
     
-    super.spriteBlock = super.spriteSheet.get(super.spriteX, super.spriteY, super.sizeWidth, super.sizeHeight);
+    super.spriteBlock = resources.interativeObjectSpriteSheet.get(super.spriteX, super.spriteY, super.sizeWidth, super.sizeHeight);
     
   }
   

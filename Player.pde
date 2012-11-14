@@ -37,8 +37,6 @@ public class Player extends Hitbox {
   
   private int gunInterval; // measured in frames
   private final int gunCooldown = 6; // measured in frames
-
-  private final PImage spriteSheet;
   
   private Animation animatePlayer; // master animation object
   private Animation animationWalkLeft;
@@ -152,8 +150,6 @@ public class Player extends Hitbox {
     super.sizeWidth = 32;
     super.sizeHeight = 38;
     
-    spriteSheet = loadImage("resources/player-sprite.gif");
-    
     currTopLeftTile = new int[2];
     currTopRightTile = new int[2];
     currBottomLeftTile = new int[2];
@@ -163,14 +159,14 @@ public class Player extends Hitbox {
     currRightBottomTile = new int[2];
     currRightTopTile = new int[2];
     
-    animationWalkLeft = new Animation(spriteTableWalkLeft, spriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
-    animationWalkRight = new Animation(spriteTableWalkRight, spriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
-    animationJumpLeft = new Animation(spriteTableJumpLeft, spriteSheet, 0, 3, false);
-    animationJumpRight = new Animation(spriteTableJumpRight, spriteSheet, 0, 3, false);
-    animationShootWalkLeft = new Animation(spriteTableShootWalkLeft, spriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
-    animationShootWalkRight = new Animation(spriteTableShootWalkRight, spriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
-    animationShootJumpLeft = new Animation(spriteTableShootJumpLeft, spriteSheet, 0, 3, false);
-    animationShootJumpRight = new Animation(spriteTableShootJumpRight, spriteSheet, 0, 3, false);
+    animationWalkLeft = new Animation(spriteTableWalkLeft, resources.playerSpriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
+    animationWalkRight = new Animation(spriteTableWalkRight, resources.playerSpriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
+    animationJumpLeft = new Animation(spriteTableJumpLeft, resources.playerSpriteSheet, 0, 3, false);
+    animationJumpRight = new Animation(spriteTableJumpRight, resources.playerSpriteSheet, 0, 3, false);
+    animationShootWalkLeft = new Animation(spriteTableShootWalkLeft, resources.playerSpriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
+    animationShootWalkRight = new Animation(spriteTableShootWalkRight, resources.playerSpriteSheet, 1, 3, true); // exclude first frame because it is not part of the running animation
+    animationShootJumpLeft = new Animation(spriteTableShootJumpLeft, resources.playerSpriteSheet, 0, 3, false);
+    animationShootJumpRight = new Animation(spriteTableShootJumpRight, resources.playerSpriteSheet, 0, 3, false);
     
   }
   

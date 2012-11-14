@@ -11,7 +11,6 @@ public abstract class InteractiveObject extends Hitbox {
   final int alignment;
 
   PImage spriteBlock;
-  PImage spriteSheet;
   
   boolean isAvailable = true;
 
@@ -23,8 +22,7 @@ public abstract class InteractiveObject extends Hitbox {
     super.sizeWidth = e;
     super.sizeHeight = f;
     alignment = g;
-    spriteSheet = game.tileSheetInterativeObjects;
-    spriteBlock = spriteSheet.get(spriteX, spriteY, sizeWidth, sizeHeight);
+    spriteBlock = resources.interativeObjectSpriteSheet.get(spriteX, spriteY, sizeWidth, sizeHeight);
   }
 
   abstract void init();

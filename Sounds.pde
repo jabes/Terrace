@@ -37,8 +37,6 @@ public class Sounds {
     if (hasVolume) music.setVolume(musicVolume);
     else if (hasGain) music.setGain(musicGain);
     
-    
-        
   }
   
   public void playAudio (AudioPlayer a) {
@@ -55,7 +53,6 @@ public class Sounds {
   
   public void mute () {
     music.mute();
-    //pauseAudio(music);
     jump.mute();
     lazer.mute();
     kill.mute();
@@ -67,7 +64,6 @@ public class Sounds {
   
   public void unmute () {
     music.unmute();
-    //loopAudio(music);
     jump.unmute();
     lazer.unmute();
     kill.unmute();

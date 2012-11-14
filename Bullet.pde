@@ -12,9 +12,7 @@ public class Bullet extends Hitbox {
   private boolean isExploding;
   
   private int explosionWidth;
-  
-  private final PImage spriteSheet;
-  
+    
   Animation animateBullet; // master animation object
   Animation animationShootLeft;
   Animation animationShootRight;
@@ -62,11 +60,10 @@ public class Bullet extends Hitbox {
   };
   
   public Bullet () {
-    spriteSheet = loadImage("resources/bullet-sprite.gif");
-    animationShootLeft = new Animation(spriteTableShootLeft, spriteSheet, 1, 3, false);
-    animationShootRight = new Animation(spriteTableShootRight, spriteSheet, 1, 3, false);
-    animationExplodeLeft = new Animation(spriteTableExplodeLeft, spriteSheet, 1, 3, false);
-    animationExplodeRight = new Animation(spriteTableExplodeRight, spriteSheet, 1, 3, false);
+    animationShootLeft = new Animation(spriteTableShootLeft, resources.bulletSpriteSheet, 1, 3, false);
+    animationShootRight = new Animation(spriteTableShootRight, resources.bulletSpriteSheet, 1, 3, false);
+    animationExplodeLeft = new Animation(spriteTableExplodeLeft, resources.bulletSpriteSheet, 1, 3, false);
+    animationExplodeRight = new Animation(spriteTableExplodeRight, resources.bulletSpriteSheet, 1, 3, false);
     destroy(); // bullets begin their life dead :)
   }
   

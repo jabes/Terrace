@@ -1,15 +1,10 @@
 public class Menu {
   
   boolean isOpen = false;
-  PImage backdropGraphic;
-  PImage backdropTitle;
   Button playButton;
   Button loadMapButton;
   
   Menu () {
-    
-    backdropGraphic = loadImage("resources/menu-backdrop.png");
-    backdropTitle = loadImage("resources/menu-title.png");
     
     playButton = new Button(globals.viewportHalfWidth - 80, 250, 160, 40, new int[][]{
       {216, 40, 0},
@@ -38,8 +33,8 @@ public class Menu {
   void iterate () {
     
     applet.background(216, 40, 0);
-    image(backdropGraphic, 0, globals.viewportHeight - 122, 600, 122);
-    image(backdropTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
+    image(resources.menuBackdrop, 0, globals.viewportHeight - 122, 600, 122);
+    image(resources.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
     
     if (playButton.isActive) {
       

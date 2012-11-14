@@ -18,8 +18,6 @@ public abstract class Enemy {
   public boolean isAlive;
   public boolean isExploding;
   
-  private PImage spriteSheet;
-  
   Enemy (int x, int y) {
     spawnTileX = x;
     spawnTileY = y;
@@ -37,6 +35,5 @@ public abstract class Enemy {
   abstract void destroy();
   abstract void iterate();
   abstract void moveEnemy(float x, float y);
-  //abstract PImage animateEnemy(int dir);
   
 }

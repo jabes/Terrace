@@ -10,7 +10,6 @@ public class World {
   final int tileHeight;
   final int viewportTileCount;
   
-  final PImage tileSheet;
   PImage tileBlock;
   
   // note: subject to change when importing maps
@@ -42,7 +41,6 @@ public class World {
   };
   
   World (int w, int h) {
-    tileSheet = loadImage("resources/world-tileset.png");
     tileWidth = w;
     tileHeight = h;
     //totalTilesX = mapData[0].length;
@@ -90,7 +88,7 @@ public class World {
       for (int x = 0; x < mapData[y].length; x++) { 
         int tileType = mapData[y][x];
         if (tileType > 0 && isDrawable(x, 1)) {
-          tileBlock = tileSheet.get(mapLegend[tileType][0], mapLegend[tileType][1], tileWidth, tileHeight);
+          tileBlock = resources.gameTileSheet.get(mapLegend[tileType][0], mapLegend[tileType][1], tileWidth, tileHeight);
           image(tileBlock, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
         }
       }

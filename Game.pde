@@ -87,11 +87,10 @@ public class Game {
     {39, 2, 6, 5},
     {41, 6, 6, 3}
   };
-
-  PImage tileSheetInterativeObjects;
   
   Button volumeButton;
-  PImage volumeIcon;
+  PImage volumeIconOn;
+  PImage volumeIconOff;
   
   final int[][] volumeButtonColorsOn = {
     {50, 200, 50},
@@ -109,16 +108,16 @@ public class Game {
   };
 
   Game () {
-    
-    volumeIcon = loadImage("resources/volume.png");
-    tileSheetInterativeObjects = loadImage("resources/objects-tileset.gif");
-    
+        
     enemies = new ArrayList();
     objects = new ArrayList();
     bullets = new Bullet[globals.maxBullets];
-  
+    
+    volumeIconOn = resources.volumeIcon.get(0, 0, 38, 38);
+    volumeIconOff = resources.volumeIcon.get(0, 38, 38, 38);
+    
     volumeButton = new Button(globals.viewportWidth - 50, 10, 38, 38, volumeButtonColorsOn);
-    volumeButton.addIcon(volumeIcon.get(0, 0, 38, 38), 0, 0, 38, 38);
+    volumeButton.addIcon(volumeIconOn, 0, 0, 38, 38);
     
   }
   
@@ -199,7 +198,7 @@ public class Game {
     isRunning = true;
     if (globals.noSound) {
       sounds.mute();
-      volumeButton.changeIcon(volumeIcon.get(0, 38, 38, 38), 0, 0, 38, 38);
+      volumeButton.changeIcon(volumeIconOff, 0, 0, 38, 38);
       volumeButton.changeColor(volumeButtonColorsOff);
     }
     sounds.loopAudio(sounds.music);
@@ -254,11 +253,11 @@ public class Game {
     if (volumeButton.isActive) {
       if (sounds.isMuted) {
         sounds.unmute();
-        volumeButton.changeIcon(volumeIcon.get(0, 0, 38, 38), 0, 0, 38, 38);
+        volumeButton.changeIcon(volumeIconOn, 0, 0, 38, 38);
         volumeButton.changeColor(volumeButtonColorsOn);
       } else {
         sounds.mute();
-        volumeButton.changeIcon(volumeIcon.get(0, 38, 38, 38), 0, 0, 38, 38);
+        volumeButton.changeIcon(volumeIconOff, 0, 0, 38, 38);
         volumeButton.changeColor(volumeButtonColorsOff);
       }
     }
