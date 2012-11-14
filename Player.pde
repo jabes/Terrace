@@ -15,8 +15,12 @@ public class Player extends Hitbox {
   
   private int direction;
   
-  private final int spawnTileX;
-  private final int spawnTileY;
+  private final int defaultSpawnTileX = 0;
+  private final int defaultSpawnTileY = 5;
+  // note: subject to change when importing maps
+  int spawnTileX;
+  int spawnTileY;
+  
   
   //public float posX;
   //public float posY;
@@ -143,10 +147,7 @@ public class Player extends Hitbox {
     {176, 344, 44, 56}
   };
   
-  public Player (int tileX, int tileY) {
-    
-    spawnTileX = tileX;
-    spawnTileY = tileY;
+  public Player () {
     
     super.sizeWidth = 32;
     super.sizeHeight = 38;
@@ -173,7 +174,10 @@ public class Player extends Hitbox {
     
   }
   
-  private void init () {
+  private void init (int tileX, int tileY) {
+    println("PLAYER INIT");
+    spawnTileX = tileX;
+    spawnTileY = tileY;
     direction = 1; // start facing right
     speedX = speedY = 0;
     isJumping = true; // player starts in the air
@@ -187,6 +191,7 @@ public class Player extends Hitbox {
   }
   
   public void reset () {
+    println("PLAYER RESET");
     animationWalkLeft.reset();
     animationWalkRight.reset();
     animationJumpLeft.reset();
@@ -195,7 +200,7 @@ public class Player extends Hitbox {
     animationShootWalkRight.reset();
     animationShootJumpLeft.reset();
     animationShootJumpRight.reset();
-    init();
+    //init(tileX, tileY);
   }
   
   public void destroy () {

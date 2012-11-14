@@ -13,8 +13,10 @@ public class Game {
   2 = kintot
   -----------------------------
   legend: tileX, tileY, type
+  note: subject to change when importing maps
   */
-  final int[][] enemyData = {
+  int[][] enemyData;
+  int[][] defaultEnemyData = {
     {3, 5, 1},
     {5, 10, 2},
     {6, 10, 2},
@@ -56,8 +58,10 @@ public class Game {
   5 = coin
   -----------------------------
   legend: tileX, tileY, alignment, objectType
+  note: subject to change when importing maps
   */
-  final int[][] interactiveObjectData = {
+  int[][] interactiveObjectData;
+  final int[][] defaultInteractiveObjectData = {
     {1, 8, 6, 2},
     {2, 8, 7, 5},
     {2, 8, 6, 5},
@@ -118,33 +122,44 @@ public class Game {
     
   }
   
-  void init () {
+  void init (int[][] newInteractiveObjectData, int[][] newEnemyData) {
+
+    println("GAME INIT");
     
-    isRunning = false;
+    interactiveObjectData = new int[newInteractiveObjectData.length][4]; // reset array
+    arrayCopy(newInteractiveObjectData, interactiveObjectData);
     
-    for (int i = 0, ii = enemyData.length; i < ii; i++) {
-      if (enemyData[i][2] == 1) enemies.add(new GilliamKnight(enemyData[i][0], enemyData[i][1]));
-      else if (enemyData[i][2] == 2) enemies.add(new Kintot(enemyData[i][0], enemyData[i][1]));
+    enemyData = new int[newEnemyData.length][3]; // reset array
+    arrayCopy(newEnemyData, enemyData);
+
+    
+    if (enemyData != null && enemyData.length > 0) {
+      for (int i = 0, ii = enemyData.length; i < ii; i++) {
+        if (enemyData[i][2] == 1) enemies.add(new GilliamKnight(enemyData[i][0], enemyData[i][1]));
+        else if (enemyData[i][2] == 2) enemies.add(new Kintot(enemyData[i][0], enemyData[i][1]));
+      }
     }
     
-    for (int i = 0; i < interactiveObjectData.length; i++) {
-      int[] obj = interactiveObjectData[i];
-      switch (obj[3]) {
-        case 1: // weak spring
-          objects.add(new WeakSpring(obj[0], obj[1], obj[2]));
-          break;
-        case 2: // strong spring
-          objects.add(new StrongSpring(obj[0], obj[1], obj[2]));
-          break;
-        case 3: // tree
-          objects.add(new Tree(obj[0], obj[1], obj[2]));
-          break;
-        case 4: // sign
-          objects.add(new CommonObject(obj[0], obj[1], 64, 12, 32, 48, obj[2]));
-          break;
-        case 5: // coin
-          objects.add(new Coin(obj[0], obj[1], obj[2]));
-          break;
+    if (interactiveObjectData != null && interactiveObjectData.length > 0) {
+      for (int i = 0; i < interactiveObjectData.length; i++) {
+        int[] obj = interactiveObjectData[i];
+        switch (obj[3]) {
+          case 1: // weak spring
+            objects.add(new WeakSpring(obj[0], obj[1], obj[2]));
+            break;
+          case 2: // strong spring
+            objects.add(new StrongSpring(obj[0], obj[1], obj[2]));
+            break;
+          case 3: // tree
+            objects.add(new Tree(obj[0], obj[1], obj[2]));
+            break;
+          case 4: // sign
+            objects.add(new CommonObject(obj[0], obj[1], 64, 12, 32, 48, obj[2]));
+            break;
+          case 5: // coin
+            objects.add(new Coin(obj[0], obj[1], obj[2]));
+            break;
+        }
       }
     }
     
@@ -154,7 +169,9 @@ public class Game {
   }
   
   void reset () {
-  
+    
+    println("GAME RESET");
+      
     player.reset();
     world.reset();
     score.reset();
@@ -164,16 +181,21 @@ public class Game {
       enemy.reset();
     }
     
+    enemies.clear();
+    
     for (int i = 0, ii = objects.size(); i < ii; i++) {
       InteractiveObject intObj = (InteractiveObject) objects.get(i);
       intObj.reset();
     }
     
+    objects.clear();
+    
     for (int i = 0, ii = globals.maxBullets; i < ii; i++) bullets[i].destroy();
-  
+    
   }
   
   void start () {
+    println("GAME START");
     isRunning = true;
     if (globals.noSound) {
       sounds.mute();
@@ -184,6 +206,7 @@ public class Game {
   }
   
   void stop () {
+    println("GAME STOP");
     isRunning = false;
     sounds.pauseAudio(sounds.music);
     reset();

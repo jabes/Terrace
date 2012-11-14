@@ -47,6 +47,9 @@ public class ScoreCard {
     
     if (playAgainButton.isActive) {
       hide();
+      player.init(player.spawnTileX, player.spawnTileY);
+      world.init(world.mapData);
+      game.init(game.interactiveObjectData, game.enemyData);
       game.start();
     } if (backButton.isActive) {
       hide();

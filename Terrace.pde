@@ -29,13 +29,9 @@ void setup () {
   keyboard = new Keyboard();
   sky = new Sky();
   world = new World(60, 60);
-  player = new Player(0, 5);
+  player = new Player();
   score = new Score();
   scorecard = new ScoreCard();
-  
-  world.init();
-  player.init();
-  game.init();
   
   menu.show();
   
@@ -47,6 +43,8 @@ void stop() {
 }
 
 void draw () {
+  
+  applet.background(0);
   
   mouse.cursor = ARROW; // reset every draw (evaluated in code below)
   
