@@ -61,6 +61,7 @@ public class Menu {
         String dataType = "";
         int lineCount = 0;
         ArrayList newInteractiveObjectData = new ArrayList();
+        ArrayList newEnemyData = new ArrayList();
         int[][] newMapData = new int[10][1];
         int newSpawnTileX = 0;
         int newSpawnTileY = 0;
@@ -83,6 +84,8 @@ public class Menu {
               arrayCopy(rowData, newMapData[lineCount]);
             } else if (dataType.equals("OBJECTS")) {
               newInteractiveObjectData.add(rowData);
+            } else if (dataType.equals("ENEMIES")) {
+              newEnemyData.add(rowData);
             }
             
             lineCount++;
@@ -91,12 +94,15 @@ public class Menu {
         }
         
         // there is probably a better way to do this
-        int[][] converted = new int[newInteractiveObjectData.size()][4];
-        for (int i = 0; i < newInteractiveObjectData.size(); i++) converted[i] = (int[]) newInteractiveObjectData.get(i);
+        int[][] convertedInteractiveObjectData = new int[newInteractiveObjectData.size()][4];
+        for (int i = 0; i < newInteractiveObjectData.size(); i++) convertedInteractiveObjectData[i] = (int[]) newInteractiveObjectData.get(i);
+        
+        int[][] convertedEnemyData = new int[newEnemyData.size()][3];
+        for (int i = 0; i < newEnemyData.size(); i++) convertedEnemyData[i] = (int[]) newEnemyData.get(i);
         
         player.init(newSpawnTileX, newSpawnTileY);
         world.init(newMapData);
-        game.init(converted, new int[][]{});
+        game.init(convertedInteractiveObjectData, convertedEnemyData);
         
         game.start();
         
