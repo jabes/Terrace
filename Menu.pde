@@ -36,6 +36,14 @@ public class Menu {
     image(resources.menuBackdropBlue, 0, globals.viewportHeight - 122, 600, 122);
     image(resources.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
     
+    pushStyle();
+    fill(255);
+    textFont(fonts.TheSans);
+    textAlign(CENTER);
+    text("Shoot: \"Ctr\" or \"Z\"", globals.viewportHalfWidth, 400);
+    text("Jump: \"Spacebar\" or \"X\" or \"Up Arrow\"", globals.viewportHalfWidth, 420);
+    popStyle();
+    
     if (playButton.isActive) {
       
       hide();
