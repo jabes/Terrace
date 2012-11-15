@@ -26,7 +26,7 @@ public class Resources {
     menuBackdrop = loadImage("resources/menu-backdrop.png");
     menuTitle = loadImage("resources/menu-title.png");
     playerSpriteSheet = loadImage("resources/player-sprite.gif");
-    gameBackdrop = loadImage("resources/background-graphic.jpg");
+    gameBackdrop = loadImage("resources/game-backdrop.png");
     gameTileSheet = loadImage("resources/world-tileset.png");
     endTime = System.currentTimeMillis();
     println("EXTERNAL RESOURCES LOADED IN " + (endTime - startTime) + " MS");
