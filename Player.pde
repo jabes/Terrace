@@ -7,7 +7,7 @@ public class Player extends Hitbox {
   
   // hit detection in pixels between tile and player
   // caution: do not allow player padding + dimensions to exceed tile dimensions 
-  private final int tilePadding = 1;
+  private final int tilePadding = 2;
   
   // note: player dimensions cannot exceed tile dimensions 
   //public final int sizeWidth = 32;

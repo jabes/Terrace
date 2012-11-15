@@ -56,6 +56,9 @@ public class Game {
   3 = tree
   4 = sign
   5 = coin
+  6 = rock
+  7 = bean stock
+  8 = shrub
   -----------------------------
   legend: tileX, tileY, alignment, objectType
   note: subject to change when importing maps
@@ -66,18 +69,23 @@ public class Game {
     {2, 8, 7, 5},
     {2, 8, 6, 5},
     {4, 5, 6, 4},
+    {8, 8, 6, 6},
     {9, 8, 6, 3},
     {11, 8, 6, 2},
+    {13, 3, 6, 8},
     {14, 3, 6, 3},
     {15, 3, 7, 5},
     {15, 3, 6, 5},
     {15, 3, 5, 5},
+    {16, 3, 6, 7},
     {17, 7, 6, 2},
+    {18, 7, 6, 6},
     {19, 7, 6, 3},
     {20, 7, 6, 1},
     {23, 5, 6, 5},
     {26, 4, 6, 5},
     {29, 6, 6, 1},
+    {33, 4, 6, 7},
     {34, 4, 6, 3},
     {36, 4, 6, 1},
     {37, 2, 6, 5},
@@ -85,6 +93,7 @@ public class Game {
     {38, 2, 6, 4},
     {39, 2, 7, 5},
     {39, 2, 6, 5},
+    {40, 6, 6, 8},
     {41, 6, 6, 3}
   };
   
@@ -157,6 +166,15 @@ public class Game {
             break;
           case 5: // coin
             objects.add(new Coin(obj[0], obj[1], obj[2]));
+            break;
+          case 6: // rock
+            objects.add(new CommonObject(obj[0], obj[1], 128, 28, 46, 32, obj[2]));
+            break;
+          case 7: // bean stock
+            objects.add(new CommonObject(obj[0], obj[1], 174, 12, 24, 48, obj[2]));
+            break;
+          case 8: // shrub
+            objects.add(new CommonObject(obj[0], obj[1], 198, 38, 30, 22, obj[2]));
             break;
         }
       }
