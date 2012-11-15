@@ -210,12 +210,12 @@ public class Player extends Hitbox {
     
     if (keyboard.keyLeft) speedX -= acceleration;
     if (keyboard.keyRight) speedX += acceleration;
-    if (keyboard.keyUp && !isJumping && speedY == 0) {
+    if ((keyboard.keyUp || keyboard.keySpace || keyboard.keyX) && !isJumping && speedY == 0) {
       speedY = jumpForce;
       isJumping = true;
       sounds.playAudio(sounds.jump);
     }
-    if (keyboard.keyControl) {
+    if (keyboard.keyControl || keyboard.keyZ) {
       isShooting = true;
       shoot(direction);
     } else isShooting = false;

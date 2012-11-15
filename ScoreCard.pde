@@ -45,7 +45,7 @@ public class ScoreCard {
     text("You have " + score.p + " points", globals.viewportHalfWidth, 150);
     popStyle();
     
-    if (playAgainButton.isActive) {
+    if (playAgainButton.isActive || keyboard.keySpace) {
       hide();
       player.init(player.spawnTileX, player.spawnTileY);
       world.init(world.mapData);
