@@ -9,13 +9,13 @@ public class ScoreCard {
     
     playAgainButton = new Button(globals.viewportHalfWidth - 80, 250, 160, 40, new int[][]{
       {216, 40, 0},
-      {190, 35, 0}
+      {164, 0, 0}
     });
-    playAgainButton.addText("PLAY SOME MORE");
+    playAgainButton.addText("TRY AGAIN");
     
     backButton = new Button(globals.viewportHalfWidth - 80, 300, 160, 40, new int[][]{
       {216, 40, 0},
-      {190, 35, 0}
+      {164, 0, 0}
     });
     backButton.addText("BACK TO MENU");
     
@@ -34,7 +34,7 @@ public class ScoreCard {
   void iterate () {
     
     applet.background(216, 40, 0);
-    image(resources.menuBackdrop, 0, globals.viewportHeight - 122, 600, 122);
+    image(resources.menuBackdropRed, 0, globals.viewportHeight - 122, 600, 122);
     
     pushStyle();
     fill(255);

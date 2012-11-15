@@ -7,14 +7,14 @@ public class Menu {
   Menu () {
     
     playButton = new Button(globals.viewportHalfWidth - 80, 250, 160, 40, new int[][]{
-      {216, 40, 0},
-      {190, 35, 0}
+      {80, 136, 248},
+      {62, 75, 102}
     });
     playButton.addText("PLAY GAME");
     
     loadMapButton = new Button(globals.viewportHalfWidth - 80, 300, 160, 40, new int[][]{
-      {216, 40, 0},
-      {190, 35, 0}
+      {80, 136, 248},
+      {62, 75, 102}
     });
     loadMapButton.addText("LOAD MAP");
     
@@ -32,8 +32,8 @@ public class Menu {
   
   void iterate () {
     
-    applet.background(216, 40, 0);
-    image(resources.menuBackdrop, 0, globals.viewportHeight - 122, 600, 122);
+    applet.background(80, 136, 248);
+    image(resources.menuBackdropBlue, 0, globals.viewportHeight - 122, 600, 122);
     image(resources.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
     
     if (playButton.isActive) {

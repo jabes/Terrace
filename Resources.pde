@@ -5,7 +5,8 @@ public class Resources {
   final PImage interativeObjectSpriteSheet;
   final PImage gilliamKnightSpriteSheet;
   final PImage kintotSpriteSheet;
-  final PImage menuBackdrop;
+  final PImage menuBackdropRed;
+  final PImage menuBackdropBlue;
   final PImage menuTitle;
   final PImage playerSpriteSheet;
   final PImage gameBackdrop;
@@ -23,7 +24,8 @@ public class Resources {
     interativeObjectSpriteSheet = loadImage("resources/objects-tileset.gif");
     gilliamKnightSpriteSheet = loadImage("resources/enemy-sprite-gilliam-knight.gif");
     kintotSpriteSheet = loadImage("resources/enemy-sprite-kintot.gif");
-    menuBackdrop = loadImage("resources/menu-backdrop.png");
+    menuBackdropRed = loadImage("resources/menu-backdrop-red.png");
+    menuBackdropBlue = loadImage("resources/menu-backdrop-blue.png");
     menuTitle = loadImage("resources/menu-title.png");
     playerSpriteSheet = loadImage("resources/player-sprite.gif");
     gameBackdrop = loadImage("resources/game-backdrop.png");
