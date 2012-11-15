@@ -170,10 +170,6 @@ public class Game {
   void reset () {
     
     println("GAME RESET");
-      
-    player.reset();
-    world.reset();
-    score.reset();
     
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
@@ -196,6 +192,7 @@ public class Game {
   void start () {
     println("GAME START");
     isRunning = true;
+    score.reset();
     if (globals.noSound) {
       sounds.mute();
       volumeButton.changeIcon(volumeIconOff, 0, 0, 38, 38);

@@ -40,7 +40,7 @@ void setup () {
 }
 
 void stop() {
-  game.stop();
+  //game.stop();
   sounds.unload();
 }
 
@@ -56,6 +56,8 @@ void draw () {
     } else {
       game.stop();
       scorecard.show();
+      player.reset();
+      world.reset();
     }
   } else if (menu.isOpen) {
     menu.iterate();
