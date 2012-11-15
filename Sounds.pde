@@ -16,11 +16,17 @@ public class Sounds {
   public boolean hasVolume;
   public boolean hasGain;
   
+  long startTime;
+  long endTime;
+    
   public Sounds (PApplet a) {
     
     minim = new Minim(a);
     isMuted = false;
-
+    
+    println("LOAD EXTERNAL SOUNDS");
+    startTime = System.currentTimeMillis();
+    
     music = minim.loadFile("resources/gunman.wav");
     jump = minim.loadFile("resources/jump.wav");
     lazer = minim.loadFile("resources/lazer.wav");
@@ -28,6 +34,9 @@ public class Sounds {
     spring = minim.loadFile("resources/spring.wav");
     die = minim.loadFile("resources/die.wav");
     coin = minim.loadFile("resources/coin.wav");
+    
+    endTime = System.currentTimeMillis();
+    println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");
     
     hasVolume = music.hasControl(Controller.VOLUME);
     hasGain = music.hasControl(Controller.GAIN);

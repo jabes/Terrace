@@ -17,7 +17,7 @@ public class Resources {
   
   // note: sound class also loads external resources
   Resources () {
-    println("LOAD EXTERNAL RESOURCES");
+    println("LOAD EXTERNAL GRAPHICS");
     startTime = System.currentTimeMillis();
     bulletSpriteSheet = loadImage("resources/bullet-sprite.gif");
     volumeIcon = loadImage("resources/volume.png");
@@ -31,7 +31,7 @@ public class Resources {
     gameBackdrop = loadImage("resources/game-backdrop.png");
     gameTileSheet = loadImage("resources/world-tileset.png");
     endTime = System.currentTimeMillis();
-    println("EXTERNAL RESOURCES LOADED IN " + (endTime - startTime) + " MS");
+    println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
   }
   
 }
