@@ -5,7 +5,6 @@ public class Globals {
   final int viewportHalfWidth = 300;
   final int viewportHalfHeight = 300;
   final int maxBullets = 12;
-  final boolean noSound = true;
   final float gravity = 0.20;
   final int coinOffsetMultiplier = 10;
   final String groupDelimiter = "#";

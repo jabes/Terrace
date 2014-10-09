@@ -125,8 +125,8 @@ public class Game {
     volumeIconOn = resources.volumeIcon.get(0, 0, 38, 38);
     volumeIconOff = resources.volumeIcon.get(0, 38, 38, 38);
     
-    volumeButton = new Button(globals.viewportWidth - 50, 10, 38, 38, volumeButtonColorsOn);
-    volumeButton.addIcon(volumeIconOn, 0, 0, 38, 38);
+    volumeButton = new Button(globals.viewportWidth - 50, 10, 38, 38, volumeButtonColorsOff);
+    volumeButton.addIcon(volumeIconOff, 0, 0, 38, 38);
     
   }
   
@@ -140,7 +140,6 @@ public class Game {
     enemyData = new int[newEnemyData.length][3]; // reset array
     arrayCopy(newEnemyData, enemyData);
 
-    
     if (enemyData != null && enemyData.length > 0) {
       for (int i = 0, ii = enemyData.length; i < ii; i++) {
         if (enemyData[i][2] == 1) enemies.add(new GilliamKnight(enemyData[i][0], enemyData[i][1]));
@@ -211,11 +210,6 @@ public class Game {
     println("GAME START");
     isRunning = true;
     score.reset();
-    if (globals.noSound) {
-      sounds.mute();
-      volumeButton.changeIcon(volumeIconOff, 0, 0, 38, 38);
-      volumeButton.changeColor(volumeButtonColorsOff);
-    }
     sounds.loopAudio(sounds.music);
   }
   
