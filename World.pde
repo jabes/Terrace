@@ -45,15 +45,11 @@ public class World {
   World (int w, int h) {
     tileWidth = w;
     tileHeight = h;
-    //totalTilesX = mapData[0].length;
-    //totalTilesY = mapData.length;
-    //mapWidth = tileWidth * totalTilesX;
-    //mapHeight = tileHeight * totalTilesY;
     viewportTileCount = globals.viewportWidth / tileWidth;
   }
   
   void init (int[][] newMapData) {
-    println("WORLD INIT");
+    //println("WORLD INIT");
     posX = posY = 0;
     mapData = new int[newMapData.length][newMapData[0].length]; // reset array
     arrayCopy(newMapData, mapData);
@@ -61,11 +57,6 @@ public class World {
     totalTilesY = mapData.length;
     mapWidth = tileWidth * totalTilesX;
     mapHeight = tileHeight * totalTilesY;
-  }
-  
-  void reset () {
-    println("WORLD RESET");
-    //init(mapData);
   }
   
   void iterate () {

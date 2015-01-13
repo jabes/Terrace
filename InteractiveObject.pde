@@ -1,13 +1,9 @@
 public abstract class InteractiveObject extends Hitbox {
 
-  //float posX;
-  //float posY;
   final int tileX;
   final int tileY;
   int spriteX;
   int spriteY;
-  //final int sizeWidth;
-  //final int sizeHeight;
   final int alignment;
 
   PImage spriteBlock;

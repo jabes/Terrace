@@ -1,11 +1,7 @@
 public class Bullet extends Hitbox {
 
   private final int speed = 8;
-  //private int sizeWidth; // dimensions are subject to change depending on the current sprite block
-  //private int sizeHeight; // dimensions are subject to change depending on the current sprite block
   private int direction;
-  //private float posX;
-  //private float posY;
   private final int walkOffsetY = 13; // help line up the bullets with the players gun
   private final int jumpOffsetY = 15; // help line up the bullets with the players gun
   public boolean isActive;

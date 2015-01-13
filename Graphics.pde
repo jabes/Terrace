@@ -18,7 +18,7 @@ public class Graphics {
   // note: sound class also loads external resources
   Graphics () {
 
-    println("LOADING EXTERNAL GRAPHICS");
+    //println("LOADING EXTERNAL GRAPHICS");
     startTime = millis();
 
     bulletSpriteSheet             = loadImage("resources/graphics/bullet-sprite.gif");
@@ -34,7 +34,7 @@ public class Graphics {
     gameTileSheet                 = loadImage("resources/graphics/world-tileset.png");
 
     endTime = millis();
-    println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
+    //println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
 
   }
   

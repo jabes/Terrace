@@ -14,9 +14,6 @@ public class Sounds {
   
   boolean isMuted;
   
-  //boolean hasVolume;
-  //boolean hasGain;
-  
   int startTime;
   int endTime;
     
@@ -25,7 +22,7 @@ public class Sounds {
     minim = new Minim(a);
     isMuted = false;
     
-    println("LOADING EXTERNAL SOUNDS");
+    //println("LOADING EXTERNAL SOUNDS");
     startTime = millis();
     
     music     = minim.loadFile("resources/sounds/gunman.wav");
@@ -37,14 +34,7 @@ public class Sounds {
     coin      = minim.loadFile("resources/sounds/coin.wav");
     
     endTime = millis();
-    println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");
-    
-    //hasVolume = music.hasControl(Controller.VOLUME);
-    //hasGain = music.hasControl(Controller.GAIN);
-    //final float musicVolume = 0.9;
-    //float musicGain = -80.00 + (80.00 * musicVolume);
-    //if (hasVolume) music.setVolume(musicVolume);
-    //else if (hasGain) music.setGain(musicGain);
+    //println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");
     
   }
   

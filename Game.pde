@@ -132,7 +132,7 @@ public class Game {
   
   void init (int[][] newInteractiveObjectData, int[][] newEnemyData) {
 
-    println("GAME INIT");
+    //println("GAME INIT");
     
     interactiveObjectData = new int[newInteractiveObjectData.length][4]; // reset array
     arrayCopy(newInteractiveObjectData, interactiveObjectData);
@@ -186,7 +186,7 @@ public class Game {
   
   void reset () {
     
-    println("GAME RESET");
+    //println("GAME RESET");
     
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
@@ -207,14 +207,14 @@ public class Game {
   }
   
   void start () {
-    println("GAME START");
+    //println("GAME START");
     isRunning = true;
     score.reset();
     sounds.loopAudio(sounds.music);
   }
   
   void stop () {
-    println("GAME STOP");
+    //println("GAME STOP");
     isRunning = false;
     sounds.pauseAudio(sounds.music);
     reset();

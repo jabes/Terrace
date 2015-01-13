@@ -9,10 +9,6 @@ public class Player extends Hitbox {
   // caution: do not allow player padding + dimensions to exceed tile dimensions 
   private final int tilePadding = 2;
   
-  // note: player dimensions cannot exceed tile dimensions 
-  //public final int sizeWidth = 32;
-  //public final int sizeHeight = 38;
-  
   private int direction;
   
   private final int defaultSpawnTileX = 0;
@@ -21,9 +17,6 @@ public class Player extends Hitbox {
   int spawnTileX;
   int spawnTileY;
   
-  
-  //public float posX;
-  //public float posY;
   private float newPosX;
   private float newPosY;
   private float speedX;
@@ -147,6 +140,7 @@ public class Player extends Hitbox {
   
   public Player () {
     
+    // note: player dimensions cannot exceed tile dimensions
     super.sizeWidth = 32;
     super.sizeHeight = 38;
     
@@ -171,7 +165,7 @@ public class Player extends Hitbox {
   }
   
   private void init (int tileX, int tileY) {
-    println("PLAYER INIT");
+    //println("PLAYER INIT");
     spawnTileX = tileX;
     spawnTileY = tileY;
     direction = 1; // start facing right
@@ -187,7 +181,7 @@ public class Player extends Hitbox {
   }
   
   public void reset () {
-    println("PLAYER RESET");
+    //println("PLAYER RESET");
     animationWalkLeft.reset();
     animationWalkRight.reset();
     animationJumpLeft.reset();
@@ -196,7 +190,6 @@ public class Player extends Hitbox {
     animationShootWalkRight.reset();
     animationShootJumpLeft.reset();
     animationShootJumpRight.reset();
-    //init(tileX, tileY);
   }
   
   public void destroy () {
@@ -205,20 +198,20 @@ public class Player extends Hitbox {
   }
 
   public void iterate () {
-      
     
     if (keyboard.keyLeft) speedX -= acceleration;
     if (keyboard.keyRight) speedX += acceleration;
+    
     if ((keyboard.keyUp || keyboard.keySpace || keyboard.keyX) && !isJumping && speedY == 0) {
       speedY = jumpForce;
       isJumping = true;
       sounds.playAudio(sounds.jump);
     }
+
     if (keyboard.keyControl || keyboard.keyZ) {
       isShooting = true;
       shoot(direction);
     } else isShooting = false;
-    
     
     speedY += globals.gravity;
     if (speedY > 0 || speedY < 0) isJumping = true;

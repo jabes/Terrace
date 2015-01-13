@@ -53,7 +53,6 @@ void draw () {
       game.stop();
       scorecard.show();
       player.reset();
-      world.reset();
     }
   } else if (menu.isOpen) {
     menu.iterate();
@@ -84,7 +83,7 @@ void mouseReleased () {
 
 void mapFileSelected (File selection) {
   if (selection == null) {
-    println("Window was closed or the user hit cancel.");
+    //println("Window was closed or the user hit cancel.");
   } else {
     String[] data = loadStrings(selection);
     if (data != null) {
