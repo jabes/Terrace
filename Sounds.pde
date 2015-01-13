@@ -12,9 +12,10 @@ public class Sounds {
   AudioPlayer die;
   AudioPlayer coin;
   
-  public boolean isMuted;
-  public boolean hasVolume;
-  public boolean hasGain;
+  boolean isMuted;
+  
+  //boolean hasVolume;
+  //boolean hasGain;
   
   int startTime;
   int endTime;
@@ -38,13 +39,12 @@ public class Sounds {
     endTime = millis();
     println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");
     
-    hasVolume = music.hasControl(Controller.VOLUME);
-    hasGain = music.hasControl(Controller.GAIN);
-    
-    final float musicVolume = 0.9;
-    float musicGain = -80.00 + (80.00 * musicVolume);
-    if (hasVolume) music.setVolume(musicVolume);
-    else if (hasGain) music.setGain(musicGain);
+    //hasVolume = music.hasControl(Controller.VOLUME);
+    //hasGain = music.hasControl(Controller.GAIN);
+    //final float musicVolume = 0.9;
+    //float musicGain = -80.00 + (80.00 * musicVolume);
+    //if (hasVolume) music.setVolume(musicVolume);
+    //else if (hasGain) music.setGain(musicGain);
     
   }
   
