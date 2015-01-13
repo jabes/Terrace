@@ -206,7 +206,6 @@ public class Player extends Hitbox {
 
   public void iterate () {
       
-    //System.out.println("---PLAYER-------------------------------------------");
     
     if (keyboard.keyLeft) speedX -= acceleration;
     if (keyboard.keyRight) speedX += acceleration;
@@ -239,13 +238,11 @@ public class Player extends Hitbox {
     if (speedX > maxSpeedX) speedX = maxSpeedX;
     else if (speedX < maxSpeedX * -1) speedX = maxSpeedX * -1;
     
-    //System.out.println("posX:" + super.posX + " posY:" + super.posY);
   
     // apply new positional coords to player   
     newPosX = super.posX + speedX;
     newPosY = super.posY + speedY;
     
-    //System.out.println("speedX:" + speedX + " speedY:" + speedY);
     
     // get tile numbers adjacent to the player
     int adjTileUp = floor((newPosY - 1 - tilePadding) / world.tileHeight);
@@ -253,7 +250,6 @@ public class Player extends Hitbox {
     int adjTileLeft = floor((newPosX - 1 - tilePadding) / world.tileWidth);
     int adjTileRight = floor((newPosX + super.sizeWidth + tilePadding) / world.tileWidth);
     
-    //System.out.println("adjTileUp:" + adjTileUp + " adjTileDown:" + adjTileDown + " adjTileLeft:" + adjTileLeft + " adjTileRight:" + adjTileRight);
     
     int[] topLeftTile = world.getTileByCoords(newPosX - tilePadding, newPosY - 1 - tilePadding);
     int[] topRightTile = world.getTileByCoords(newPosX + super.sizeWidth - 1 + tilePadding, newPosY - 1 - tilePadding);
@@ -264,16 +260,7 @@ public class Player extends Hitbox {
     int[] rightBottomTile = world.getTileByCoords(newPosX + super.sizeWidth + tilePadding, newPosY + super.sizeHeight - 1 + tilePadding);
     int[] rightTopTile = world.getTileByCoords(newPosX + super.sizeWidth + tilePadding, newPosY - tilePadding);
 
-    /*
-    System.out.println("topLeftTile x:" + topLeftTile[0] + " y:" + topLeftTile[1]);
-    System.out.println("topRightTile x:" + topRightTile[0] + " y:" + topRightTile[1]);
-    System.out.println("bottomLeftTile x:" + bottomLeftTile[0] + " y:" + bottomLeftTile[1]);
-    System.out.println("bottomRightTile x:" + bottomRightTile[0] + " y:" + bottomRightTile[1]);
-    System.out.println("leftBottomTile x:" + leftBottomTile[0] + " y:" + leftBottomTile[1]);
-    System.out.println("leftTopTile x:" + leftTopTile[0] + " y:" + leftTopTile[1]);
-    System.out.println("rightBottomTile x:" + rightBottomTile[0] + " y:" + rightBottomTile[1]);
-    System.out.println("rightTopTile x:" + rightTopTile[0] + " y:" + rightTopTile[1]);
-    */
+
     
     /*
     stroke(0, 0, 0);
@@ -422,7 +409,6 @@ public class Player extends Hitbox {
       newPosY = (adjTileDown * world.tileHeight) - super.sizeHeight - tilePadding; 
     }
     
-    //System.out.println("touchingRightTile: " + touchingRightTile + " touchingLeftTile:" + touchingLeftTile + " touchingBottomTile:" + touchingBottomTile + " touchingTopTile:" + touchingTopTile);
     
     // moving right
     if (speedX >= 0) movableRight = !touchingRightTile && !touchingViewportRight;
@@ -433,7 +419,6 @@ public class Player extends Hitbox {
     // moving up
     if (speedY <= 0) movableUp = !touchingTopTile && !touchingViewportTop;
  
-    //System.out.println("movableLeft: " + movableLeft + " movableRight:" + movableRight + " movableUp:" + movableUp + " movableDown:" + movableDown);
     
     if (movableRight) {
       arrayCopy(rightTopTile, currRightTopTile);

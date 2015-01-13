@@ -12,13 +12,13 @@ public class Resources {
   final PImage gameBackdrop;
   final PImage gameTileSheet;
   
-  long startTime;
-  long endTime;
+  int startTime;
+  int endTime;
   
   // note: sound class also loads external resources
   Resources () {
-    println("LOAD EXTERNAL GRAPHICS");
-    startTime = System.currentTimeMillis();
+    println("LOADING EXTERNAL GRAPHICS");
+    startTime = millis();
     bulletSpriteSheet = loadImage("resources/bullet-sprite.gif");
     volumeIcon = loadImage("resources/volume.png");
     interativeObjectSpriteSheet = loadImage("resources/objects-tileset.gif");
@@ -30,7 +30,7 @@ public class Resources {
     playerSpriteSheet = loadImage("resources/player-sprite.gif");
     gameBackdrop = loadImage("resources/game-backdrop.png");
     gameTileSheet = loadImage("resources/world-tileset.png");
-    endTime = System.currentTimeMillis();
+    endTime = millis();
     println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
   }
   

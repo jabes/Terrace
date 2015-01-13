@@ -87,7 +87,6 @@ public class Kintot extends Enemy {
         this.isActive = false;
       }
       
-      //System.out.println(super.newPosY);
       moveEnemy(super.newPosX, super.newPosY);
 
       
