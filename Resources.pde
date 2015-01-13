@@ -19,17 +19,17 @@ public class Resources {
   Resources () {
     println("LOADING EXTERNAL GRAPHICS");
     startTime = millis();
-    bulletSpriteSheet = loadImage("resources/bullet-sprite.gif");
-    volumeIcon = loadImage("resources/volume.png");
-    interativeObjectSpriteSheet = loadImage("resources/objects-tileset.gif");
-    gilliamKnightSpriteSheet = loadImage("resources/enemy-sprite-gilliam-knight.gif");
-    kintotSpriteSheet = loadImage("resources/enemy-sprite-kintot.gif");
-    menuBackdropRed = loadImage("resources/menu-backdrop-red.png");
-    menuBackdropBlue = loadImage("resources/menu-backdrop-blue.png");
-    menuTitle = loadImage("resources/menu-title.png");
-    playerSpriteSheet = loadImage("resources/player-sprite.gif");
-    gameBackdrop = loadImage("resources/game-backdrop.png");
-    gameTileSheet = loadImage("resources/world-tileset.png");
+    bulletSpriteSheet               = loadImage(sketchPath + "/resources/bullet-sprite.gif");
+    volumeIcon                      = loadImage(sketchPath + "/resources/volume.png");
+    interativeObjectSpriteSheet     = loadImage(sketchPath + "/resources/objects-tileset.gif");
+    gilliamKnightSpriteSheet        = loadImage(sketchPath + "/resources/enemy-sprite-gilliam-knight.gif");
+    kintotSpriteSheet               = loadImage(sketchPath + "/resources/enemy-sprite-kintot.gif");
+    menuBackdropRed                 = loadImage(sketchPath + "/resources/menu-backdrop-red.png");
+    menuBackdropBlue                = loadImage(sketchPath + "/resources/menu-backdrop-blue.png");
+    menuTitle                       = loadImage(sketchPath + "/resources/menu-title.png");
+    playerSpriteSheet               = loadImage(sketchPath + "/resources/player-sprite.gif");
+    gameBackdrop                    = loadImage(sketchPath + "/resources/game-backdrop.png");
+    gameTileSheet                   = loadImage(sketchPath + "/resources/world-tileset.png");
     endTime = millis();
     println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
   }
