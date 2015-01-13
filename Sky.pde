@@ -14,7 +14,7 @@ public class Sky {
     // if the map width is less than or the same as the viewport width, a division by zero will occur
     xMultiplier = (world.mapWidth > globals.viewportWidth) ? abs(world.posX) / (world.mapWidth - globals.viewportWidth) : 0;
     bgX = (xDistance * xMultiplier) * -1;      
-    image(resources.gameBackdrop, bgX, 0, backgroundWidth, backgroundHeight);
+    image(graphics.gameBackdrop, bgX, 0, backgroundWidth, backgroundHeight);
   }
 
 }

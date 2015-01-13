@@ -30,8 +30,8 @@ public class Kintot extends Enemy {
     super(tileX, tileY);
     super.sizeWidth = this.sizeDetectionWidth;
     super.sizeHeight = this.sizeDetectionHeight;
-    this.animationMoveUp = new Animation(this.spriteTableMoveUp, resources.kintotSpriteSheet, 0, 4, true);
-    this.animationMoveDown = new Animation(this.spriteTableMoveDown, resources.kintotSpriteSheet, 0, 4, true);
+    this.animationMoveUp = new Animation(this.spriteTableMoveUp, graphics.kintotSpriteSheet, 0, 4, true);
+    this.animationMoveDown = new Animation(this.spriteTableMoveDown, graphics.kintotSpriteSheet, 0, 4, true);
     this.init(tileX, tileY);
   }
 

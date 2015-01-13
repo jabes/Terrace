@@ -22,7 +22,7 @@ public abstract class InteractiveObject extends Hitbox {
     super.sizeWidth = e;
     super.sizeHeight = f;
     alignment = g;
-    spriteBlock = resources.interativeObjectSpriteSheet.get(spriteX, spriteY, sizeWidth, sizeHeight);
+    spriteBlock = graphics.interativeObjectSpriteSheet.get(spriteX, spriteY, sizeWidth, sizeHeight);
   }
 
   abstract void init();

@@ -1,6 +1,6 @@
 PApplet applet;
 Globals globals;
-Resources resources;
+Graphics graphics;
 Fonts fonts;
 Mouse mouse;
 Keyboard keyboard;
@@ -22,7 +22,7 @@ void setup () {
   applet.noSmooth();
   applet.noStroke();
 
-  resources = new Resources();
+  graphics = new Graphics();
   sounds = new Sounds(applet);
   game = new Game();
   menu = new Menu();

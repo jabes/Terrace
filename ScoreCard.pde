@@ -34,7 +34,7 @@ public class ScoreCard {
   void iterate () {
     
     applet.background(216, 40, 0);
-    image(resources.menuBackdropRed, 0, globals.viewportHeight - 122, 600, 122);
+    image(graphics.menuBackdropRed, 0, globals.viewportHeight - 122, 600, 122);
     
     pushStyle();
     fill(255);

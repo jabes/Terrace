@@ -60,10 +60,10 @@ public class Bullet extends Hitbox {
   };
   
   public Bullet () {
-    animationShootLeft = new Animation(spriteTableShootLeft, resources.bulletSpriteSheet, 1, 3, false);
-    animationShootRight = new Animation(spriteTableShootRight, resources.bulletSpriteSheet, 1, 3, false);
-    animationExplodeLeft = new Animation(spriteTableExplodeLeft, resources.bulletSpriteSheet, 1, 3, false);
-    animationExplodeRight = new Animation(spriteTableExplodeRight, resources.bulletSpriteSheet, 1, 3, false);
+    animationShootLeft = new Animation(spriteTableShootLeft, graphics.bulletSpriteSheet, 1, 3, false);
+    animationShootRight = new Animation(spriteTableShootRight, graphics.bulletSpriteSheet, 1, 3, false);
+    animationExplodeLeft = new Animation(spriteTableExplodeLeft, graphics.bulletSpriteSheet, 1, 3, false);
+    animationExplodeRight = new Animation(spriteTableExplodeRight, graphics.bulletSpriteSheet, 1, 3, false);
     destroy(); // bullets begin their life dead :)
   }
   

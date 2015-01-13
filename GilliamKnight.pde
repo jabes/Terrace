@@ -38,10 +38,10 @@ public class GilliamKnight extends Enemy {
     super(tileX, tileY);
     super.sizeWidth = this.sizeDetectionWidth;
     super.sizeHeight = this.sizeDetectionHeight;
-    this.animationWalkLeft = new Animation(this.spriteTableWalkLeft, resources.gilliamKnightSpriteSheet, 0, 4, true);
-    this.animationWalkRight = new Animation(this.spriteTableWalkRight, resources.gilliamKnightSpriteSheet, 0, 4, true);
-    this.animationPerishLeft = new Animation(this.spriteTablePerishLeft, resources.gilliamKnightSpriteSheet, 0, 2, true);
-    this.animationPerishRight = new Animation(this.spriteTablePerishRight, resources.gilliamKnightSpriteSheet, 0, 2, true);
+    this.animationWalkLeft = new Animation(this.spriteTableWalkLeft, graphics.gilliamKnightSpriteSheet, 0, 4, true);
+    this.animationWalkRight = new Animation(this.spriteTableWalkRight, graphics.gilliamKnightSpriteSheet, 0, 4, true);
+    this.animationPerishLeft = new Animation(this.spriteTablePerishLeft, graphics.gilliamKnightSpriteSheet, 0, 2, true);
+    this.animationPerishRight = new Animation(this.spriteTablePerishRight, graphics.gilliamKnightSpriteSheet, 0, 2, true);
     this.init(tileX, tileY);
   }
 

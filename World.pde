@@ -90,7 +90,7 @@ public class World {
       for (int x = 0; x < mapData[y].length; x++) { 
         int tileType = mapData[y][x];
         if (tileType > 0 && isDrawable(x, 1)) {
-          tileBlock = resources.gameTileSheet.get(mapLegend[tileType][0], mapLegend[tileType][1], tileWidth, tileHeight);
+          tileBlock = graphics.gameTileSheet.get(mapLegend[tileType][0], mapLegend[tileType][1], tileWidth, tileHeight);
           image(tileBlock, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
         }
       }

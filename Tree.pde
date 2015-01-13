@@ -16,7 +16,7 @@ private class Tree extends InteractiveObject {
   
   Tree (int a, int b, int c) {
     super(a, b, 0, 60, 128, 121, c);
-    animateTree = new Animation(spriteTable, resources.interativeObjectSpriteSheet, 0, 10, true);
+    animateTree = new Animation(spriteTable, graphics.interativeObjectSpriteSheet, 0, 10, true);
     super.calcPosition();
     init();
   }

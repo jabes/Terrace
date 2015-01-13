@@ -33,8 +33,8 @@ public class Menu {
   void iterate () {
     
     applet.background(80, 136, 248);
-    image(resources.menuBackdropBlue, 0, globals.viewportHeight - 122, 600, 122);
-    image(resources.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
+    image(graphics.menuBackdropBlue, 0, globals.viewportHeight - 122, 600, 122);
+    image(graphics.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
     
     pushStyle();
     fill(255);

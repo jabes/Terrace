@@ -20,7 +20,7 @@ private class Coin extends InteractiveObject {
     super(a, b, 96, 28, 16, 16, c);
     coinDestinationY = 40;
     easingPosY = new Transition(50, 0, 1, coinIncrement, globals.coinOffsetMultiplier, "easeInOutQuad");
-    animateCoin = new Animation(spriteTable, resources.interativeObjectSpriteSheet, 0, 5, true);
+    animateCoin = new Animation(spriteTable, graphics.interativeObjectSpriteSheet, 0, 5, true);
     super.calcPosition();
     originalPosY = super.posY;
     coinIncrement++;
