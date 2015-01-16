@@ -1,3 +1,15 @@
+/* @pjs preload="resources/graphics/bullet-sprite.gif,
+                 resources/graphics/volume.png,
+                 resources/graphics/objects-tileset.gif,
+                 resources/graphics/enemy-sprite-gilliam-knight.gif,
+                 resources/graphics/enemy-sprite-kintot.gif,
+                 resources/graphics/menu-backdrop-red.png,
+                 resources/graphics/menu-backdrop-blue.png,
+                 resources/graphics/menu-title.png,
+                 resources/graphics/player-sprite.gif,
+                 resources/graphics/game-backdrop.png,
+                 resources/graphics/world-tileset.png"; */
+
 PApplet applet;
 Globals globals;
 Graphics graphics;
