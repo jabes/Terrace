@@ -30,9 +30,9 @@ void setup () {
   applet = this;
   globals = new Globals();
 
-  applet.size(globals.viewportWidth, globals.viewportHeight);
-  applet.noSmooth();
-  applet.noStroke();
+  size(600, 600);
+  noSmooth();
+  noStroke();
 
   graphics = new Graphics();
   sounds = new Sounds(applet);

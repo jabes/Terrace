@@ -7,13 +7,13 @@ public class ScoreCard {
   
   ScoreCard () {
     
-    playAgainButton = new Button(globals.viewportHalfWidth - 80, 250, 160, 40, new int[][]{
+    playAgainButton = new Button((width / 2) - 80, 250, 160, 40, new int[][]{
       {216, 40, 0},
       {164, 0, 0}
     });
     playAgainButton.addText("TRY AGAIN");
     
-    backButton = new Button(globals.viewportHalfWidth - 80, 300, 160, 40, new int[][]{
+    backButton = new Button((width / 2) - 80, 300, 160, 40, new int[][]{
       {216, 40, 0},
       {164, 0, 0}
     });
@@ -34,15 +34,15 @@ public class ScoreCard {
   void iterate () {
     
     applet.background(216, 40, 0);
-    image(graphics.menuBackdropRed, 0, globals.viewportHeight - 122, 600, 122);
+    image(graphics.menuBackdropRed, 0, height - 122, 600, 122);
     
     pushStyle();
     fill(255);
     textFont(fonts.AndaleMono);
     textAlign(CENTER);
-    text("YOU HAVE PERISHED", globals.viewportHalfWidth, 120);
+    text("YOU HAVE PERISHED", (width / 2), 120);
     textFont(fonts.TheSans);
-    text("You have " + score.p + " points", globals.viewportHalfWidth, 150);
+    text("You have " + score.p + " points", (width / 2), 150);
     popStyle();
     
     if (playAgainButton.isActive || keyboard.keySpace) {

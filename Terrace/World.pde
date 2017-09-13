@@ -45,7 +45,7 @@ public class World {
   World (int w, int h) {
     tileWidth = w;
     tileHeight = h;
-    viewportTileCount = globals.viewportWidth / tileWidth;
+    viewportTileCount = width / tileWidth;
   }
   
   void init (int[][] newMapData) {
@@ -62,12 +62,12 @@ public class World {
   void iterate () {
     
     float playerCenter = player.posX + (player.sizeWidth / 2);
-    int mapThresholdRight = mapWidth - globals.viewportHalfWidth;
-    int mapThresholdLeft = globals.viewportHalfWidth;
+    int mapThresholdRight = mapWidth - (width / 2);
+    int mapThresholdLeft = (width / 2);
     
     // player has moved past the map width minus half the viewport
     if (playerCenter > mapThresholdRight) {
-      posX = (mapWidth - globals.viewportWidth) * -1;
+      posX = (mapWidth - width) * -1;
     // player has moved past the middle of the viewport
     } else if (playerCenter > mapThresholdLeft) {
       posX = (playerCenter - mapThresholdLeft) * -1;

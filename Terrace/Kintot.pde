@@ -80,8 +80,8 @@ public class Kintot extends Enemy {
       //int adjTileDown = floor((super.newPosY + super.sizeHeight + super.tilePadding) / world.tileHeight);
       
       
-      if (super.newPosY > globals.viewportHeight) {
-        super.newPosY = globals.viewportHeight;
+      if (super.newPosY > height) {
+        super.newPosY = height;
         super.speedY = 0;
         this.msJumpCooldown = floor(random(20, 100));
         this.isActive = false;

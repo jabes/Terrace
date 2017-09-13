@@ -109,7 +109,7 @@ public class Bullet extends Hitbox {
       if (direction == 1) super.posX += speed;
       else if (direction == 3) super.posX -= speed; 
       
-      if (super.posX < (0 - world.posX - super.sizeWidth) || super.posX > (globals.viewportWidth - world.posX)) { // no longer within viewport (direction is irrelevant)
+      if (super.posX < (0 - world.posX - super.sizeWidth) || super.posX > (width - world.posX)) { // no longer within viewport (direction is irrelevant)
         destroy(); 
       } else if (direction == 1 && (super.posX + super.sizeWidth) < world.mapWidth) { // RIGHT - only test collisions while within viewport
         int[] tileTopRight = world.getTileByCoords(super.posX + super.sizeWidth, super.posY);

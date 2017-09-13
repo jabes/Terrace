@@ -125,7 +125,7 @@ public class Game {
     volumeIconOn = graphics.volumeIcon.get(0, 0, 38, 38);
     volumeIconOff = graphics.volumeIcon.get(0, 38, 38, 38);
     
-    volumeButton = new Button(globals.viewportWidth - 50, 10, 38, 38, volumeButtonColorsOff);
+    volumeButton = new Button(width - 50, 10, 38, 38, volumeButtonColorsOff);
     volumeButton.addIcon(volumeIconOff, 0, 0, 38, 38);
     
   }

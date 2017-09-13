@@ -6,13 +6,13 @@ public class Menu {
   
   Menu () {
     
-    playButton = new Button(globals.viewportHalfWidth - 80, 250, 160, 40, new int[][]{
+    playButton = new Button((width / 2) - 80, 250, 160, 40, new int[][]{
       {80, 136, 248},
       {62, 75, 102}
     });
     playButton.addText("PLAY GAME");
     
-    loadMapButton = new Button(globals.viewportHalfWidth - 80, 300, 160, 40, new int[][]{
+    loadMapButton = new Button((width / 2) - 80, 300, 160, 40, new int[][]{
       {80, 136, 248},
       {62, 75, 102}
     });
@@ -33,15 +33,15 @@ public class Menu {
   void iterate () {
     
     applet.background(80, 136, 248);
-    image(graphics.menuBackdropBlue, 0, globals.viewportHeight - 122, 600, 122);
-    image(graphics.menuTitle, globals.viewportHalfWidth - 96, 100, 192, 80);
+    image(graphics.menuBackdropBlue, 0, height - 122, 600, 122);
+    image(graphics.menuTitle, (width / 2) - 96, 100, 192, 80);
     
     pushStyle();
     fill(255);
     textFont(fonts.TheSans);
     textAlign(CENTER);
-    text("Shoot: \"Ctr\" or \"Z\"", globals.viewportHalfWidth, 400);
-    text("Jump: \"Spacebar\" or \"X\" or \"Up Arrow\"", globals.viewportHalfWidth, 420);
+    text("Shoot: \"Ctr\" or \"Z\"", (width / 2), 400);
+    text("Jump: \"Spacebar\" or \"X\" or \"Up Arrow\"", (width / 2), 420);
     popStyle();
     
     if (playButton.isActive) {

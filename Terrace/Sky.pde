@@ -7,12 +7,12 @@ public class Sky {
   private float bgX;
     
   public Sky () {
-    xDistance = backgroundWidth - globals.viewportWidth;
+    xDistance = backgroundWidth - width;
   }
   
   public void iterate () {
     // if the map width is less than or the same as the viewport width, a division by zero will occur
-    xMultiplier = (world.mapWidth > globals.viewportWidth) ? abs(world.posX) / (world.mapWidth - globals.viewportWidth) : 0;
+    xMultiplier = (world.mapWidth > width) ? abs(world.posX) / (world.mapWidth - width) : 0;
     bgX = (xDistance * xMultiplier) * -1;      
     image(graphics.gameBackdrop, bgX, 0, backgroundWidth, backgroundHeight);
   }
