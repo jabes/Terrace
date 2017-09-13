@@ -1,14 +1,14 @@
-/* @pjs preload="resources/graphics/bullet-sprite.gif,
-                 resources/graphics/volume.png,
-                 resources/graphics/objects-tileset.gif,
-                 resources/graphics/enemy-sprite-gilliam-knight.gif,
-                 resources/graphics/enemy-sprite-kintot.gif,
-                 resources/graphics/menu-backdrop-red.png,
-                 resources/graphics/menu-backdrop-blue.png,
-                 resources/graphics/menu-title.png,
-                 resources/graphics/player-sprite.gif,
-                 resources/graphics/game-backdrop.png,
-                 resources/graphics/world-tileset.png"; */
+/* @pjs preload="Terrace/resources/graphics/bullet-sprite.gif,
+                 Terrace/resources/graphics/volume.png,
+                 Terrace/resources/graphics/objects-tileset.gif,
+                 Terrace/resources/graphics/enemy-sprite-gilliam-knight.gif,
+                 Terrace/resources/graphics/enemy-sprite-kintot.gif,
+                 Terrace/resources/graphics/menu-backdrop-red.png,
+                 Terrace/resources/graphics/menu-backdrop-blue.png,
+                 Terrace/resources/graphics/menu-title.png,
+                 Terrace/resources/graphics/player-sprite.gif,
+                 Terrace/resources/graphics/game-backdrop.png,
+                 Terrace/resources/graphics/world-tileset.png"; */
 
 PApplet applet;
 Globals globals;

@@ -25,13 +25,13 @@ public class Sounds {
     //println("LOADING EXTERNAL SOUNDS");
     startTime = millis();
     
-    music     = minim.loadFile("resources/sounds/gunman.wav");
-    jump      = minim.loadFile("resources/sounds/jump.wav");
-    lazer     = minim.loadFile("resources/sounds/lazer.wav");
-    kill      = minim.loadFile("resources/sounds/kill.wav");
-    spring    = minim.loadFile("resources/sounds/spring.wav");
-    die       = minim.loadFile("resources/sounds/die.wav");
-    coin      = minim.loadFile("resources/sounds/coin.wav");
+    music     = minim.loadFile("Terrace/resources/sounds/gunman.wav");
+    jump      = minim.loadFile("Terrace/resources/sounds/jump.wav");
+    lazer     = minim.loadFile("Terrace/resources/sounds/lazer.wav");
+    kill      = minim.loadFile("Terrace/resources/sounds/kill.wav");
+    spring    = minim.loadFile("Terrace/resources/sounds/spring.wav");
+    die       = minim.loadFile("Terrace/resources/sounds/die.wav");
+    coin      = minim.loadFile("Terrace/resources/sounds/coin.wav");
     
     endTime = millis();
     //println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");

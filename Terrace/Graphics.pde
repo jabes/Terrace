@@ -21,17 +21,17 @@ public class Graphics {
     //println("LOADING EXTERNAL GRAPHICS");
     startTime = millis();
 
-    bulletSpriteSheet             = loadImage("resources/graphics/bullet-sprite.gif");
-    volumeIcon                    = loadImage("resources/graphics/volume.png");
-    interativeObjectSpriteSheet   = loadImage("resources/graphics/objects-tileset.gif");
-    gilliamKnightSpriteSheet      = loadImage("resources/graphics/enemy-sprite-gilliam-knight.gif");
-    kintotSpriteSheet             = loadImage("resources/graphics/enemy-sprite-kintot.gif");
-    menuBackdropRed               = loadImage("resources/graphics/menu-backdrop-red.png");
-    menuBackdropBlue              = loadImage("resources/graphics/menu-backdrop-blue.png");
-    menuTitle                     = loadImage("resources/graphics/menu-title.png");
-    playerSpriteSheet             = loadImage("resources/graphics/player-sprite.gif");
-    gameBackdrop                  = loadImage("resources/graphics/game-backdrop.png");
-    gameTileSheet                 = loadImage("resources/graphics/world-tileset.png");
+    bulletSpriteSheet             = loadImage("Terrace/resources/graphics/bullet-sprite.gif");
+    volumeIcon                    = loadImage("Terrace/resources/graphics/volume.png");
+    interativeObjectSpriteSheet   = loadImage("Terrace/resources/graphics/objects-tileset.gif");
+    gilliamKnightSpriteSheet      = loadImage("Terrace/resources/graphics/enemy-sprite-gilliam-knight.gif");
+    kintotSpriteSheet             = loadImage("Terrace/resources/graphics/enemy-sprite-kintot.gif");
+    menuBackdropRed               = loadImage("Terrace/resources/graphics/menu-backdrop-red.png");
+    menuBackdropBlue              = loadImage("Terrace/resources/graphics/menu-backdrop-blue.png");
+    menuTitle                     = loadImage("Terrace/resources/graphics/menu-title.png");
+    playerSpriteSheet             = loadImage("Terrace/resources/graphics/player-sprite.gif");
+    gameBackdrop                  = loadImage("Terrace/resources/graphics/game-backdrop.png");
+    gameTileSheet                 = loadImage("Terrace/resources/graphics/world-tileset.png");
 
     endTime = millis();
     //println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");

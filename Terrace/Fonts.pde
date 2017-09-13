@@ -5,9 +5,9 @@ public class Fonts {
   public PFont TheSans;
   
   public Fonts () {
-    AndaleMono      = loadFont("resources/fonts/AndaleMono-36.vlw");
-    Pro             = loadFont("resources/fonts/Pro-20.vlw");
-    TheSans         = loadFont("resources/fonts/TheSans-Plain-12.vlw");
+    AndaleMono      = loadFont("Terrace/resources/fonts/AndaleMono-36.vlw");
+    Pro             = loadFont("Terrace/resources/fonts/Pro-20.vlw");
+    TheSans         = loadFont("Terrace/resources/fonts/TheSans-Plain-12.vlw");
   }
 
 }
