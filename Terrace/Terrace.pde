@@ -1,3 +1,7 @@
+/* @pjs font="Terrace/resources/fonts/AndaleMono-36.vlw,
+              Terrace/resources/fonts/Pro-20.vlw,
+              Terrace/resources/fonts/TheSans-Plain-12.vlw"; */
+
 /* @pjs preload="Terrace/resources/graphics/bullet-sprite.gif,
                  Terrace/resources/graphics/volume.png,
                  Terrace/resources/graphics/objects-tileset.gif,
