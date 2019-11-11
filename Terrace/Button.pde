@@ -32,7 +32,6 @@ public class Button {
   }
    
   public void changeColor (int[][] c) { colors = c; }
- 
   public void addText (String t) { changeText(t); }
   public void changeText (String t) { buttonLabel = t; }
   
@@ -42,7 +41,7 @@ public class Button {
     iconX = x;
     iconY = y;
     iconW = w;
-    iconH = h;    
+    iconH = h;
   }
   
   public void iterate () {
@@ -51,18 +50,25 @@ public class Button {
     isActive = isMouseOver && mouse.wasClicked;
     
     pushStyle();
+
+    fill(
+      colors[isMouseOver ? 1 : 0][0],
+      colors[isMouseOver ? 1 : 0][1],
+      colors[isMouseOver ? 1 : 0][2]
+    );
+
     if (isMouseOver) {
-      fill(colors[1][0], colors[1][1], colors[1][2]); 
       mouse.cursor = HAND;
-    } else fill(colors[0][0], colors[0][1], colors[0][2]);
+    }
+
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
     popStyle();
     
     if (buttonLabel != null) {
       
       pushStyle();
-      fill(0);
-      textFont(fonts.Pro);
+      fill(isMouseOver ? 255 : 0);
+      textFont(fonts.VcrOsdMono);
       textAlign(CENTER, CENTER);
       text(buttonLabel, buttonX + (buttonWidth / 2), buttonY + (buttonHeight / 2));
       popStyle();

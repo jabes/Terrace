@@ -41,7 +41,7 @@ public class ScoreCard {
     textFont(fonts.AndaleMono);
     textAlign(CENTER);
     text("YOU HAVE PERISHED", (width / 2), 120);
-    textFont(fonts.TheSans);
+    textFont(fonts.OpenSansRegular);
     text("You have " + score.p + " points", (width / 2), 150);
     popStyle();
     

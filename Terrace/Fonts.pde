@@ -1,13 +1,22 @@
 public class Fonts {
   
   public PFont AndaleMono;
-  public PFont Pro;
-  public PFont TheSans;
+  public PFont VcrOsdMono;
+  public PFont OpenSansRegular;
+
+  private String fontsPath;
   
   public Fonts () {
-    AndaleMono      = loadFont("Terrace/resources/fonts/AndaleMono-36.vlw");
-    Pro             = loadFont("Terrace/resources/fonts/Pro-20.vlw");
-    TheSans         = loadFont("Terrace/resources/fonts/TheSans-Plain-12.vlw");
+
+    try {
+      fontsPath = sketchPath("resources/fonts");
+    } catch (NoSuchMethodError e) {
+      fontsPath = "Terrace/resources/fonts";
+    }
+
+    AndaleMono      = createFont(fontsPath + "/Andale-Mono.ttf", 36);
+    VcrOsdMono      = createFont(fontsPath + "/VCR-OSD-Mono.ttf", 20);
+    OpenSansRegular = createFont(fontsPath + "/OpenSans-Regular.ttf", 12);
   }
 
 }

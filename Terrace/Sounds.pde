@@ -3,7 +3,7 @@ import ddf.minim.*;
 public class Sounds {
 
   Minim minim;
-  
+
   AudioPlayer music;
   AudioPlayer jump;
   AudioPlayer lazer;
@@ -11,45 +11,42 @@ public class Sounds {
   AudioPlayer spring;
   AudioPlayer die;
   AudioPlayer coin;
-  
-  boolean isMuted;
-  
-  int startTime;
-  int endTime;
-    
+
+  public boolean isMuted;
+  private String soundsPath;
+
   public Sounds (PApplet a) {
-    
+
+    try {
+      soundsPath = sketchPath("resources/sounds");
+    } catch (NoSuchMethodError e) {
+      soundsPath = "Terrace/resources/sounds";
+    }
+
     minim = new Minim(a);
     isMuted = false;
-    
-    //println("LOADING EXTERNAL SOUNDS");
-    startTime = millis();
-    
-    music     = minim.loadFile("Terrace/resources/sounds/gunman.wav");
-    jump      = minim.loadFile("Terrace/resources/sounds/jump.wav");
-    lazer     = minim.loadFile("Terrace/resources/sounds/lazer.wav");
-    kill      = minim.loadFile("Terrace/resources/sounds/kill.wav");
-    spring    = minim.loadFile("Terrace/resources/sounds/spring.wav");
-    die       = minim.loadFile("Terrace/resources/sounds/die.wav");
-    coin      = minim.loadFile("Terrace/resources/sounds/coin.wav");
-    
-    endTime = millis();
-    //println("EXTERNAL SOUNDS LOADED IN " + (endTime - startTime) + " MS");
-    
+
+    music  = minim.loadFile(soundsPath + "/gunman.wav");
+    jump   = minim.loadFile(soundsPath + "/jump.wav");
+    lazer  = minim.loadFile(soundsPath + "/lazer.wav");
+    kill   = minim.loadFile(soundsPath + "/kill.wav");
+    spring = minim.loadFile(soundsPath + "/spring.wav");
+    die    = minim.loadFile(soundsPath + "/die.wav");
+    coin   = minim.loadFile(soundsPath + "/coin.wav");
   }
-  
+
   public void playAudio (AudioPlayer a) {
     if (!isMuted) a.play(0);
   }
-  
+
   public void loopAudio (AudioPlayer a) {
     a.loop();
   }
-  
+
   public void pauseAudio (AudioPlayer a) {
     a.pause();
   }
-  
+
   public void mute () {
     music.mute();
     jump.mute();
@@ -60,7 +57,7 @@ public class Sounds {
     coin.mute();
     isMuted = true;
   }
-  
+
   public void unmute () {
     music.unmute();
     jump.unmute();
@@ -71,7 +68,7 @@ public class Sounds {
     coin.unmute();
     isMuted = false;
   }
-  
+
   public void unload () {
     music.close();
     jump.close();

@@ -11,31 +11,28 @@ public class Graphics {
   final PImage playerSpriteSheet;
   final PImage gameBackdrop;
   final PImage gameTileSheet;
-  
-  int startTime;
-  int endTime;
-  
-  // note: sound class also loads external resources
+
+  private String graphicsPath;
+
   Graphics () {
 
-    //println("LOADING EXTERNAL GRAPHICS");
-    startTime = millis();
+    try {
+      graphicsPath = sketchPath("resources/graphics");
+    } catch (NoSuchMethodError e) {
+      graphicsPath = "Terrace/resources/graphics";
+    }
 
-    bulletSpriteSheet             = loadImage("Terrace/resources/graphics/bullet-sprite.gif");
-    volumeIcon                    = loadImage("Terrace/resources/graphics/volume.png");
-    interativeObjectSpriteSheet   = loadImage("Terrace/resources/graphics/objects-tileset.gif");
-    gilliamKnightSpriteSheet      = loadImage("Terrace/resources/graphics/enemy-sprite-gilliam-knight.gif");
-    kintotSpriteSheet             = loadImage("Terrace/resources/graphics/enemy-sprite-kintot.gif");
-    menuBackdropRed               = loadImage("Terrace/resources/graphics/menu-backdrop-red.png");
-    menuBackdropBlue              = loadImage("Terrace/resources/graphics/menu-backdrop-blue.png");
-    menuTitle                     = loadImage("Terrace/resources/graphics/menu-title.png");
-    playerSpriteSheet             = loadImage("Terrace/resources/graphics/player-sprite.gif");
-    gameBackdrop                  = loadImage("Terrace/resources/graphics/game-backdrop.png");
-    gameTileSheet                 = loadImage("Terrace/resources/graphics/world-tileset.png");
-
-    endTime = millis();
-    //println("EXTERNAL GRAPHICS LOADED IN " + (endTime - startTime) + " MS");
+    bulletSpriteSheet           = loadImage(graphicsPath + "/bullet-sprite.gif");
+    volumeIcon                  = loadImage(graphicsPath + "/volume.png");
+    interativeObjectSpriteSheet = loadImage(graphicsPath + "/objects-tileset.gif");
+    gilliamKnightSpriteSheet    = loadImage(graphicsPath + "/enemy-sprite-gilliam-knight.gif");
+    kintotSpriteSheet           = loadImage(graphicsPath + "/enemy-sprite-kintot.gif");
+    menuBackdropRed             = loadImage(graphicsPath + "/menu-backdrop-red.png");
+    menuBackdropBlue            = loadImage(graphicsPath + "/menu-backdrop-blue.png");
+    menuTitle                   = loadImage(graphicsPath + "/menu-title.png");
+    playerSpriteSheet           = loadImage(graphicsPath + "/player-sprite.gif");
+    gameBackdrop                = loadImage(graphicsPath + "/game-backdrop.png");
+    gameTileSheet               = loadImage(graphicsPath + "/world-tileset.png");
 
   }
-  
 }

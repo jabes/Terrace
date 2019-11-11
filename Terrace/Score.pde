@@ -17,7 +17,7 @@ public class Score {
   public void iterate () {
     pushStyle();
     fill(255);
-    textFont(fonts.Pro);
+    textFont(fonts.VcrOsdMono);
     textAlign(LEFT, TOP);
     text("SCORE: " + p, 10, 12);
     popStyle();

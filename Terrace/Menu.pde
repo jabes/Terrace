@@ -38,7 +38,7 @@ public class Menu {
     
     pushStyle();
     fill(255);
-    textFont(fonts.TheSans);
+    textFont(fonts.OpenSansRegular);
     textAlign(CENTER);
     text("Shoot: \"Ctr\" or \"Z\"", (width / 2), 400);
     text("Jump: \"Spacebar\" or \"X\" or \"Up Arrow\"", (width / 2), 420);
