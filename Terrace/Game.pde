@@ -228,8 +228,6 @@ public class Game {
     sky.iterate();
     world.iterate();
     player.iterate();
-    score.iterate();
-    volumeButton.iterate();
 
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
@@ -279,5 +277,9 @@ public class Game {
     }
 
     applet.translate(abs(world.posX), abs(world.posY));
+    
+    // iterate after applet.translate so they scroll with the screen
+    score.iterate();
+    volumeButton.iterate();
   }
 }
