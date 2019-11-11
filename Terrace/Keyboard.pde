@@ -21,7 +21,6 @@ public class Keyboard {
   }
 
   public void pressed (int code) {
-    //println("KEY PRESSED: " + code);
     if (code == UP) {
       keyUp = true;
     } else if (code == DOWN) {
@@ -44,9 +43,7 @@ public class Keyboard {
   public void released (int code) {
     if (code == UP) {
       keyUp = false;
-    }
-
-    if (code == DOWN) {
+    } else if (code == DOWN) {
       keyDown = false;
     } else if (code == LEFT) {
       keyLeft = false;

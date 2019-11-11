@@ -9,12 +9,12 @@ public class Menu {
       {80, 136, 248},
       {62, 75, 102}
     });
-    playButton.addText("PLAY GAME");
+    playButton.changeText("PLAY GAME");
     loadMapButton = new Button((width / 2) - 80, 300, 160, 40, new int[][] {
       {80, 136, 248},
       {62, 75, 102}
     });
-    loadMapButton.addText("LOAD MAP");
+    loadMapButton.changeText("LOAD MAP");
   }
 
   void show () {

@@ -120,14 +120,9 @@ public class Game {
     enemies = new ArrayList();
     objects = new ArrayList();
     bullets = new Bullet[globals.maxBullets];
-    volumeIconOn = graphics.volumeIcon.get(0, 0, 38, 38);
-    volumeIconOff = graphics.volumeIcon.get(0, 38, 38, 38);
-    volumeButton = new Button(width - 50, 10, 38, 38, volumeButtonColorsOff);
-    volumeButton.addIcon(volumeIconOff, 0, 0, 38, 38);
   }
 
   void init (int[][] newInteractiveObjectData, int[][] newEnemyData) {
-    //println("GAME INIT");
     interactiveObjectData = new int[newInteractiveObjectData.length][4]; // reset array
     arrayCopy(newInteractiveObjectData, interactiveObjectData);
     enemyData = new int[newEnemyData.length][3]; // reset array
@@ -187,10 +182,16 @@ public class Game {
     for (int i = 0, ii = globals.maxBullets; i < ii; i++) {
       bullets[i] = new Bullet();
     }
+
+    // slice the volume icon into on/off images
+    volumeIconOn = graphics.volumeIcon.get(0, 0, 38, 38);
+    volumeIconOff = graphics.volumeIcon.get(0, 38, 38, 38);
+    // create the volume button (default off)
+    volumeButton = new Button(width - 38 - 10, 10, 38, 38, volumeButtonColorsOff);
+    volumeButton.changeIcon(volumeIconOff, 0, 0, 38, 38);
   }
 
   void reset () {
-    //println("GAME RESET");
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
       enemy.reset();
@@ -211,14 +212,12 @@ public class Game {
   }
 
   void start () {
-    //println("GAME START");
     isRunning = true;
     score.reset();
     sounds.loopAudio(sounds.music);
   }
 
   void stop () {
-    //println("GAME STOP");
     isRunning = false;
     sounds.pauseAudio(sounds.music);
     reset();
@@ -229,6 +228,8 @@ public class Game {
     sky.iterate();
     world.iterate();
     player.iterate();
+    score.iterate();
+    volumeButton.iterate();
 
     for (int i = 0, ii = enemies.size(); i < ii; i++) {
       Enemy enemy = (Enemy) enemies.get(i);
@@ -265,10 +266,6 @@ public class Game {
         }
       }
 
-    applet.translate(abs(world.posX), abs(world.posY));
-    score.iterate();
-    volumeButton.iterate();
-
     if (volumeButton.isActive) {
       if (sounds.isMuted) {
         sounds.unmute();
@@ -280,5 +277,7 @@ public class Game {
         volumeButton.changeColor(volumeButtonColorsOff);
       }
     }
+
+    applet.translate(abs(world.posX), abs(world.posY));
   }
 }

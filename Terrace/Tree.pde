@@ -1,6 +1,7 @@
 private class Tree extends InteractiveObject {
 
   Animation animateTree;
+
   final int[][] spriteTable = {
     {0, 60, 128, 121},
     {128, 60, 128, 121},

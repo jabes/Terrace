@@ -9,12 +9,12 @@ public class ScoreCard {
       {216, 40, 0},
       {164, 0, 0}
     });
-    playAgainButton.addText("TRY AGAIN");
+    playAgainButton.changeText("TRY AGAIN");
     backButton = new Button((width / 2) - 80, 300, 160, 40, new int[][] {
       {216, 40, 0},
       {164, 0, 0}
     });
-    backButton.addText("BACK TO MENU");
+    backButton.changeText("BACK TO MENU");
   }
 
   void show () {
