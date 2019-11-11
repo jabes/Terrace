@@ -30,14 +30,11 @@ Game game;
 Menu menu;
 
 void setup () {
-
   applet = this;
   globals = new Globals();
-
   size(600, 600);
   noSmooth();
   noStroke();
-
   graphics = new Graphics();
   sounds = new Sounds(applet);
   game = new Game();
@@ -50,18 +47,14 @@ void setup () {
   player = new Player();
   score = new Score();
   scorecard = new ScoreCard();
-  
   sounds.mute();
   menu.show();
-  
 }
 
 void draw () {
-  
   applet.background(0);
-  
   mouse.cursor = ARROW; // reset every draw (evaluated in code below)
-  
+
   if (game.isRunning) {
     if (player.isAlive) {
       game.iterate();
@@ -75,10 +68,12 @@ void draw () {
   } else if (scorecard.isOpen) {
     scorecard.iterate();
   }
-  
-  cursor(mouse.cursor);
-  if (mouse.wasClicked) mouse.reset();
 
+  cursor(mouse.cursor);
+
+  if (mouse.wasClicked) {
+    mouse.reset();
+  }
 }
 
 void keyPressed () {
@@ -99,11 +94,12 @@ void mouseReleased () {
 
 void mapFileSelected (File selection) {
   if (selection == null) {
-    //println("Window was closed or the user hit cancel.");
+    // Window was closed or the user hit cancel.
+    return;
   } else {
     String[] data = loadStrings(selection);
+
     if (data != null) {
-      
       String dataType = "";
       int lineCount = 0;
       ArrayList newInteractiveObjectData = new ArrayList();
@@ -111,17 +107,18 @@ void mapFileSelected (File selection) {
       int[][] newMapData = new int[10][1];
       int newSpawnTileX = 0;
       int newSpawnTileY = 0;
-      
+
       for (int i = 0; i < data.length; i++) {
-        
         if (data[i].substring(0, 1).equals(globals.groupDelimiter)) {
           // determine if delimiter is succeeded by characters
-          if (!data[i].substring(1).equals("")) dataType = data[i].substring(1);
+          if (!data[i].substring(1).equals("")) {
+            dataType = data[i].substring(1);
+          }
+
           lineCount = 0;
         } else {
-          
           int[] rowData = int(split(data[i], globals.inlineDelimiter));
-          
+
           if (dataType.equals("PLAYER")) {
             newSpawnTileX = rowData[0];
             newSpawnTileY = rowData[1];
@@ -133,24 +130,28 @@ void mapFileSelected (File selection) {
           } else if (dataType.equals("ENEMIES")) {
             newEnemyData.add(rowData);
           }
-          
+
           lineCount++;
         }
-        
       }
-      
+
       // there is probably a better way to do this
       int[][] convertedInteractiveObjectData = new int[newInteractiveObjectData.size()][4];
-      for (int i = 0; i < newInteractiveObjectData.size(); i++) convertedInteractiveObjectData[i] = (int[]) newInteractiveObjectData.get(i);
-      
+
+      for (int i = 0; i < newInteractiveObjectData.size(); i++) {
+        convertedInteractiveObjectData[i] = (int[]) newInteractiveObjectData.get(i);
+      }
+
       int[][] convertedEnemyData = new int[newEnemyData.size()][3];
-      for (int i = 0; i < newEnemyData.size(); i++) convertedEnemyData[i] = (int[]) newEnemyData.get(i);
-      
+
+      for (int i = 0; i < newEnemyData.size(); i++) {
+        convertedEnemyData[i] = (int[]) newEnemyData.get(i);
+      }
+
       player.init(newSpawnTileX, newSpawnTileY);
       world.init(newMapData);
-      game.init(convertedInteractiveObjectData, convertedEnemyData); 
+      game.init(convertedInteractiveObjectData, convertedEnemyData);
       game.start();
-      
     } else {
       menu.show();
     }

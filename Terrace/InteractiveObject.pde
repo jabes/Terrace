@@ -7,7 +7,7 @@ public abstract class InteractiveObject extends Hitbox {
   final int alignment;
 
   PImage spriteBlock;
-  
+
   boolean isAvailable = true;
 
   InteractiveObject (int a, int b, int c, int d, int e, int f, int g) {
@@ -27,8 +27,7 @@ public abstract class InteractiveObject extends Hitbox {
   abstract void iterate();
 
   void calcPosition () {
-    
-    /* 
+    /*
     ALIGNMENT CHART
     1 = top left
     2 = top middle
@@ -39,42 +38,47 @@ public abstract class InteractiveObject extends Hitbox {
     7 = bottom left
     8 = middle left
     */
-    
     switch (alignment) {
-    case 1:
-      super.posX = tileX * world.tileWidth;
-      super.posY = tileY * world.tileHeight;
-      break;
-    case 2:
-      super.posX = (tileX * world.tileWidth) + (world.tileWidth / 2) - (sizeWidth / 2);
-      super.posY = tileY * world.tileHeight;
-      break;
-    case 3:
-      super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
-      super.posY = tileY * world.tileHeight;
-      break;
-    case 4:
-      super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
-      super.posY = (tileY * world.tileHeight) + (world.tileHeight / 2) - (sizeHeight / 2);
-      break;
-    case 5:
-      super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
-      super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
-      break;
-    case 6:
-      super.posX = (tileX * world.tileWidth) + (world.tileWidth / 2) - (sizeWidth / 2);
-      super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
-      break;
-    case 7:
-      super.posX = tileX * world.tileWidth;
-      super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
-      break;
-    case 8:
-      super.posX = tileX * world.tileWidth;
-      super.posY = (tileY * world.tileHeight) + (world.tileHeight / 2) - (sizeHeight / 2);
-      break;
+      case 1:
+        super.posX = tileX * world.tileWidth;
+        super.posY = tileY * world.tileHeight;
+        break;
+
+      case 2:
+        super.posX = (tileX * world.tileWidth) + (world.tileWidth / 2) - (sizeWidth / 2);
+        super.posY = tileY * world.tileHeight;
+        break;
+
+      case 3:
+        super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
+        super.posY = tileY * world.tileHeight;
+        break;
+
+      case 4:
+        super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
+        super.posY = (tileY * world.tileHeight) + (world.tileHeight / 2) - (sizeHeight / 2);
+        break;
+
+      case 5:
+        super.posX = (tileX * world.tileWidth) + world.tileWidth - sizeWidth;
+        super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
+        break;
+
+      case 6:
+        super.posX = (tileX * world.tileWidth) + (world.tileWidth / 2) - (sizeWidth / 2);
+        super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
+        break;
+
+      case 7:
+        super.posX = tileX * world.tileWidth;
+        super.posY = (tileY * world.tileHeight) + world.tileHeight - sizeHeight;
+        break;
+
+      case 8:
+        super.posX = tileX * world.tileWidth;
+        super.posY = (tileY * world.tileHeight) + (world.tileHeight / 2) - (sizeHeight / 2);
+        break;
     }
-    
   }
 }
 

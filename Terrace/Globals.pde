@@ -5,5 +5,5 @@ public class Globals {
   final int coinOffsetMultiplier = 10;
   final String groupDelimiter = "#";
   final String inlineDelimiter = ",";
-  
+
 }

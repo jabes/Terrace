@@ -13,7 +13,7 @@ private class Tree extends InteractiveObject {
     {384, 181, 128, 121},
     {512, 181, 128, 121}
   };
-  
+
   Tree (int a, int b, int c) {
     super(a, b, 0, 60, 128, 121, c);
     animateTree = new Animation(spriteTable, graphics.interativeObjectSpriteSheet, 0, 10, true);
@@ -36,6 +36,5 @@ private class Tree extends InteractiveObject {
     animateTree.run();
     super.spriteBlock = animateTree.spriteBlock;
   }
-  
-}
 
+}

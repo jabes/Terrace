@@ -16,7 +16,6 @@ public class Sounds {
   private String soundsPath;
 
   public Sounds (PApplet a) {
-
     try {
       soundsPath = sketchPath("resources/sounds");
     } catch (NoSuchMethodError e) {
@@ -25,7 +24,6 @@ public class Sounds {
 
     minim = new Minim(a);
     isMuted = false;
-
     music  = minim.loadFile(soundsPath + "/gunman.wav");
     jump   = minim.loadFile(soundsPath + "/jump.wav");
     lazer  = minim.loadFile(soundsPath + "/lazer.wav");
@@ -36,7 +34,9 @@ public class Sounds {
   }
 
   public void playAudio (AudioPlayer a) {
-    if (!isMuted) a.play(0);
+    if (!isMuted) {
+      a.play(0);
+    }
   }
 
   public void loopAudio (AudioPlayer a) {
@@ -81,5 +81,3 @@ public class Sounds {
   }
 
 }
-
-

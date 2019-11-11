@@ -8,14 +8,14 @@ private class Coin extends InteractiveObject {
   float originalPosY;
   Transition easingPosY;
   Animation animateCoin;
-  
+
   final int[][] spriteTable = {
     {96, 28, 16, 16},
     {112, 28, 16, 16},
     {96, 44, 16, 16},
     {112, 44, 16, 16}
   };
-  
+
   Coin (int a, int b, int c) {
     super(a, b, 96, 28, 16, 16, c);
     coinDestinationY = 40;
@@ -48,26 +48,27 @@ private class Coin extends InteractiveObject {
   }
 
   void iterate () {
-               
     if (coinDirection == 0) { // EASE UP
       coinOffsetY = easingPosY.value * coinDestinationY;
-      if (easingPosY.value == easingPosY.maxValue) coinDirection = 1;
-    } 
-    else if (coinDirection == 1) { // EASE DOWN
+
+      if (easingPosY.value == easingPosY.maxValue) {
+        coinDirection = 1;
+      }
+    } else if (coinDirection == 1) { // EASE DOWN
       coinOffsetY = coinDestinationY * (easingPosY.maxValue - easingPosY.value);
-      if (easingPosY.value == easingPosY.maxValue) coinDirection = 0;
+
+      if (easingPosY.value == easingPosY.maxValue) {
+        coinDirection = 0;
+      }
     }
-    
+
     easingPosY.step();
     animateCoin.run();
-    
     super.spriteBlock = animateCoin.spriteBlock;
     super.posY = originalPosY + (coinOffsetY * -1);
-    
-    if (this.isTouching(player.posX, player.posY, player.sizeWidth, player.sizeHeight)) destroy();
-    
-  }
- 
-  
-}
 
+    if (this.isTouching(player.posX, player.posY, player.sizeWidth, player.sizeHeight)) {
+      destroy();
+    }
+  }
+}

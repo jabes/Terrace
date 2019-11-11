@@ -15,7 +15,6 @@ public class Graphics {
   private String graphicsPath;
 
   Graphics () {
-
     try {
       graphicsPath = sketchPath("resources/graphics");
     } catch (NoSuchMethodError e) {
@@ -33,6 +32,5 @@ public class Graphics {
     playerSpriteSheet           = loadImage(graphicsPath + "/player-sprite.gif");
     gameBackdrop                = loadImage(graphicsPath + "/game-backdrop.png");
     gameTileSheet               = loadImage(graphicsPath + "/world-tileset.png");
-
   }
 }
