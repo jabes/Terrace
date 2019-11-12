@@ -21,42 +21,28 @@ public class Keyboard {
   }
 
   public void pressed (int code) {
-    if (code == UP) {
-      keyUp = true;
-    } else if (code == DOWN) {
-      keyDown = true;
-    } else if (code == LEFT) {
-      keyLeft = true;
-    } else if (code == RIGHT) {
-      keyRight = true;
-    } else if (code == CONTROL) {
-      keyControl = true;
-    } else if (code == 32) {
-      keySpace = true;
-    } else if (code == 90) {
-      keyZ = true;
-    } else if (code == 88) {
-      keyX = true;
+    switch (code) {
+      case LEFT: keyLeft = true; break;
+      case UP: keyUp = true; break;
+      case RIGHT: keyRight = true; break;
+      case DOWN: keyDown = true; break;
+      case CONTROL: keyControl = true; break;
+      case 32: keySpace = true; break;
+      case 90: keyZ = true; break;
+      case 88: keyX = true; break;
     }
   }
 
   public void released (int code) {
-    if (code == UP) {
-      keyUp = false;
-    } else if (code == DOWN) {
-      keyDown = false;
-    } else if (code == LEFT) {
-      keyLeft = false;
-    } else if (code == RIGHT) {
-      keyRight = false;
-    } else if (code == CONTROL) {
-      keyControl = false;
-    } else if (code == 32) {
-      keySpace = false;
-    } else if (code == 90) {
-      keyZ = false;
-    } else if (code == 88) {
-      keyX = false;
+     switch (code) {
+      case LEFT: keyLeft = false; break;
+      case UP: keyUp = false; break;
+      case RIGHT: keyRight = false; break;
+      case DOWN: keyDown = false; break;
+      case CONTROL: keyControl = false; break;
+      case 32: keySpace = false; break;
+      case 90: keyZ = false; break;
+      case 88: keyX = false; break;
     }
   }
 
